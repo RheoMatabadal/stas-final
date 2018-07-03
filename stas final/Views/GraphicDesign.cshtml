@@ -1,5 +1,161 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.GraphicDesign>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    string CTAImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
 }
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<section id="graphic_banner" style=" background-image: url('@bannerImageUrl');
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 400px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                <div class="card">
+                    <div class="card-body card-white">
+                        <h1 class="card-title">@Umbraco.Field("witteBox")</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+                <div class="card">
+                    <div class="card-body card-dark">
+                        <h2 class="card-title">@Umbraco.Field("zwarteText")</h2>
+                        <h4 class="card-title card-author">@Umbraco.Field("bannerAuthor", insertBefore: "-")</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-6">
+            <h1>@Umbraco.Field("titleText")</h1>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-2">
+
+
+            <p>@Umbraco.Field("graphicColLinks") </p>
+
+        </div>
+        <div class="col-md-6 offset-2">
+
+            <p>@Umbraco.Field("graphicColRechts") </p>
+
+        </div>
+
+    </div>
+</div>
+<br>
+<br>
+<!-- charts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-2">
+            <!--  <canvas id="canvasDesign" width="200" height="200">
+
+             </canvas> -->
+            <img src="~/img/gr75.png" class="img-responsive">
+            <h3 class="under-chart-text">@Umbraco.Field("ontwerp")</h3>
+        </div>
+        <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-2 ">
+            <!--    <canvas id="canvasDtp" width="200" height="200">
+
+               </canvas> -->
+            <img src="~/img/gr84.png" class="img-responsive">
+            <h3 class="under-chart-text">@Umbraco.Field("dTP")</h3>
+        </div>
+        <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-2  ">
+
+            <!-- <canvas id="canvasWebDesign" width="200" height="200">
+
+            </canvas> -->
+            <img src="~/img/gr61.png" class="img-responsive img61">
+            <h3 class="under-chart-text">@Umbraco.Field("webdesign")</h3>
+        </div>
+        <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-2 ">
+            <!-- <canvas id="canvasAdobeCC" width="200" height="200">
+
+            </canvas> -->
+            <img src="~/img/gr97.png" class="img-responsive">
+            <h3 class="under-chart-text">@Umbraco.Field("adobeCC")</h3>
+        </div>
+
+
+
+    </div>
+</div>
+
+<!-- charts -->
+
+
+<br>
+<br>
+<section id="gallery">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
+
+                <img class="img-responsive" src="~/img/hermitage.jpg" />
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
+                <img class="img-responsive" src="~/img/volksmuziek.jpg" />
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
+                <img class="img-responsive" src="~/img/fatum135.jpg" />
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
+                <img class="img-responsive" src="~/img/hermitageMall.jpg" />
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
+                <img class="img-responsive" src="~/img/afobakkaKaart.jpg" />
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
+                <img class="img-responsive" src="~/img/belastingdienst.jpg" />
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="cta-banner" style="background-image: url('@CTAImageUrl');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height:600px;
+	height: 100%;
+	width: 100%;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+
+                <h2 class="cta-text">Want to know what STAS can do for u?</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-5 col-xs-">
+                <button class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">LET'S GET IN TOUCH</button>
+            </div>
+        </div>
+    </div>
+</section>
+@{ Html.RenderPartial("Content/_CTAProccessing");}
+
+
+@{Html.RenderPartial("Content/_ContactBanner");}

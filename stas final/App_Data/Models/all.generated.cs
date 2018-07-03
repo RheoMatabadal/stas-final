@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c67df07f1aad7e1")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.12")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1dfa8507695c040b")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -438,6 +438,60 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GraphicDesign, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// adobeCC
+		///</summary>
+		[ImplementPropertyType("adobeCC")]
+		public string AdobeCC
+		{
+			get { return this.GetPropertyValue<string>("adobeCC"); }
+		}
+
+		///<summary>
+		/// DTP
+		///</summary>
+		[ImplementPropertyType("dTP")]
+		public string DTP
+		{
+			get { return this.GetPropertyValue<string>("dTP"); }
+		}
+
+		///<summary>
+		/// graphicColLinks
+		///</summary>
+		[ImplementPropertyType("graphicColLinks")]
+		public IHtmlString GraphicColLinks
+		{
+			get { return this.GetPropertyValue<IHtmlString>("graphicColLinks"); }
+		}
+
+		///<summary>
+		/// graphicColRechts
+		///</summary>
+		[ImplementPropertyType("graphicColRechts")]
+		public IHtmlString GraphicColRechts
+		{
+			get { return this.GetPropertyValue<IHtmlString>("graphicColRechts"); }
+		}
+
+		///<summary>
+		/// ontwerp
+		///</summary>
+		[ImplementPropertyType("ontwerp")]
+		public string Ontwerp
+		{
+			get { return this.GetPropertyValue<string>("ontwerp"); }
+		}
+
+		///<summary>
+		/// webdesign
+		///</summary>
+		[ImplementPropertyType("webdesign")]
+		public string Webdesign
+		{
+			get { return this.GetPropertyValue<string>("webdesign"); }
 		}
 
 		///<summary>
