@@ -2303,3 +2303,136 @@ System.NullReferenceException: Object reference not set to an instance of an obj
  2018-07-03 17:19:31,956 [P8692/D2/T30] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
  2018-07-03 17:19:36,847 [P8692/D2/T16] INFO  umbraco.content - Save Xml to file...
  2018-07-03 17:19:36,883 [P8692/D2/T16] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:26:41,463 [P8692/D2/T30] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:26:46,630 [P8692/D2/T28] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:26:46,682 [P8692/D2/T28] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:27:19,524 [P8692/D2/T6] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:27:23,893 [P8692/D2/T14] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:27:24,061 [P8692/D2/T14] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:27:45,009 [P8692/D2/T20] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:27:49,861 [P8692/D2/T7] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:27:50,061 [P8692/D2/T7] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:28:08,902 [P8692/D2/T28] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:28:13,353 [P8692/D2/T7] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:28:13,551 [P8692/D2/T7] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:30:18,893 [P8692/D2/T30] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
+System.Web.HttpCompileException (0x80004005): c:\Users\Rheo\Documents\Visual Studio 2017\Projects\stas final\stas final\Views\CorporateIdentities.cshtml(87): error CS0019: Operator '&&' cannot be applied to operands of type 'bool' and 'int'
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 2018-07-03 17:33:50,680 [P8692/D2/T7] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:33:55,380 [P8692/D2/T16] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:33:55,396 [P8692/D2/T16] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:34:33,723 [P8692/D2/T12] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:34:40,374 [P8692/D2/T22] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:34:40,478 [P8692/D2/T22] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:34:43,397 [P8692/D2/T7] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:34:47,609 [P8692/D2/T6] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:34:47,760 [P8692/D2/T6] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:36:26,036 [P8692/D2/T12] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:36:26,360 [P8692/D2/T30] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:36:26,400 [P8692/D2/T6] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:36:26,592 [P8692/D2/T12] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:36:26,668 [P8692/D2/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:36:26,720 [P8692/D2/T28] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:36:27,100 [P8692/D2/T14] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:36:27,172 [P8692/D2/T19] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:36:27,176 [P8692/D2/T6] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:36:27,536 [P8692/D2/T12] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:39:37,791 [P8692/D2/T17] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:39:42,422 [P8692/D2/T6] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:39:42,490 [P8692/D2/T6] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:43:21,090 [P8692/D2/T7] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:43:24,334 [P8692/D2/T12] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ASP._Page_Views_CorporateIdentities_cshtml.Execute() in c:\Users\Rheo\Documents\Visual Studio 2017\Projects\stas final\stas final\Views\CorporateIdentities.cshtml:line 8
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 2018-07-03 17:43:26,062 [P8692/D2/T30] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:43:26,110 [P8692/D2/T30] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:43:41,377 [P8692/D2/T6] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:43:45,873 [P8692/D2/T30] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:43:46,057 [P8692/D2/T30] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:44:02,412 [P8692/D2/T16] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Corporate Identities' with Id '1081' has been published.
+ 2018-07-03 17:44:05,962 [P8692/D2/T29] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:44:06,719 [P8692/D2/T21] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 17:44:06,775 [P8692/D2/T21] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 17:44:06,819 [P8692/D2/T19] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:44:07,099 [P8692/D2/T6] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:44:07,139 [P8692/D2/T16] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:44:07,179 [P8692/D2/T14] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:44:07,211 [P8692/D2/T17] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:44:07,215 [P8692/D2/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:44:07,367 [P8692/D2/T19] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:44:07,683 [P8692/D2/T6] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 17:44:07,783 [P8692/D2/T16] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars

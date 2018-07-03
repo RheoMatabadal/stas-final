@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b8404c2104f1f596")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4f9bac60eb3ac795")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 
 // FILE: models.generated.cs
@@ -316,21 +316,48 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// fotoRechts1
+		///</summary>
+		[ImplementPropertyType("fotoRechts1")]
+		public IPublishedContent FotoRechts1
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("fotoRechts1"); }
+		}
+
+		///<summary>
+		/// fotoRechts2
+		///</summary>
+		[ImplementPropertyType("fotoRechts2")]
+		public IPublishedContent FotoRechts2
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("fotoRechts2"); }
+		}
+
+		///<summary>
+		/// fotoRechts3
+		///</summary>
+		[ImplementPropertyType("fotoRechts3")]
+		public IPublishedContent FotoRechts3
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("fotoRechts3"); }
+		}
+
+		///<summary>
+		/// fotoRechts4
+		///</summary>
+		[ImplementPropertyType("fotoRechts4")]
+		public IPublishedContent FotoRechts4
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("fotoRechts4"); }
+		}
+
+		///<summary>
 		/// fotosOnder: foto's onder het zwarte block
 		///</summary>
 		[ImplementPropertyType("fotosOnder")]
 		public IEnumerable<IPublishedContent> FotosOnder
 		{
 			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("fotosOnder"); }
-		}
-
-		///<summary>
-		/// fotosRechts: foto's rechts van het zwarte block
-		///</summary>
-		[ImplementPropertyType("fotosRechts")]
-		public IEnumerable<IPublishedContent> FotosRechts
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("fotosRechts"); }
 		}
 
 		///<summary>

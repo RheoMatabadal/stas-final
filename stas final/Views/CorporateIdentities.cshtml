@@ -5,7 +5,13 @@
 
     Layout = "Master.cshtml";
     string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    string fotoRechts1Url = Model.Content.GetPropertyValue<IPublishedContent>("fotoRechts1").Url;
+    string fotoRechts2Url = Model.Content.GetPropertyValue<IPublishedContent>("fotoRechts2").Url;
+    string fotoRechts3Url = Model.Content.GetPropertyValue<IPublishedContent>("fotoRechts3").Url;
+    string fotoRechts4Url = Model.Content.GetPropertyValue<IPublishedContent>("fotoRechts4").Url;
+
     IEnumerable<IPublishedContent> underImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("fotosOnder");
+
 }
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -87,23 +93,23 @@
             <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
 
 
-                <img class="img-fluid" src="~/img/borgoe.jpg" style="width:100%;" />
+                <img class="img-fluid" src="@fotoRechts1Url?width=337&height=337&mode=crop" style="width:100%;" />
 
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
 
-                <img class="img-fluid" src="~/img/kirpalani.jpg" style="width:100%;" />
+                <img class="img-fluid" src="@fotoRechts2Url?width=337&height=337&mode=crop" style="width:100%;" />
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
 
-                <img class="img-fluid" src="~/img/fatum.jpg" style="width:100%;" />
+                <img class="img-fluid" src="@fotoRechts3Url?width=337&height=337&mode=crop" style="width:100%;" />
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
 
-                <img class="img-fluid" src="~/img/odoe.jpg" style="width:100%;" />
+                <img class="img-fluid" src="@fotoRechts4Url?width=337&height=337&mode=crop" style="width:100%;" />
             </div>
 
 
