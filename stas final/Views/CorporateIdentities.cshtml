@@ -1,5 +1,128 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.CorporateIdentities>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "Master.cshtml";
+                /**/
+
+                Layout = "Master.cshtml";
+                string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
 }
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<section id="corporate_banner" style=" background-image: url('@bannerImageUrl');
+        background-size: cover;
+        /*background-repeat: no-repeat;*/
+        min-height: 400px;
+        margin-top: 0px;
+        max-width: 100%;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-white">
+                        <h1 class="card-title">@Umbraco.Field("witteBox")</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-dark">
+                        <h2 class="card-title">@Umbraco.Field("zwarteText")</h2>
+                        <h4 class="card-title">@Umbraco.Field("bannerAuthor", insertBefore: "-")</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h1>@Umbraco.Field("titleText")</h1>
+            <h2>@Umbraco.Field("subtitle")</h2>
+            <p>@Umbraco.Field("text")</p>
+
+        </div>
+        <div class="col-md-4">
+            <h1>@Umbraco.Field("title2")</h1>
+            <h2>@Umbraco.Field("subtitle2")</h2>
+            <p>@Umbraco.Field("text2")</p>
+
+        </div>
+        <div class="col-md-4">
+            <h1>@Umbraco.Field("title3")</h1>
+            <h2>@Umbraco.Field("subtitle3")</h2>
+            <p>@Umbraco.Field("text3")</p>
+
+        </div>
+    </div>
+
+
+
+</div> <!-- /container -->
+<section id="gallery">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-6 gallery first-impression">
+                <h1>@Umbraco.Field("blackBoxTitle")</h1>
+                <br>
+                <p>
+                    @Umbraco.Field("blackBoxText")
+                </p>
+                <br>
+                <a href="#" class="leer-ons-kennen">BEKIJK PORTFOLIO<img src="~/img/down-arrow.png" alt="leeronskennen"> </a> <br>
+                <a href="#" class="leer-ons-kennen">GET IN TOUCH <img src="~/img/down-arrow.png" alt="leeronskennen"> </a>
+                <br>
+                <br>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
+
+
+                <img class="img-fluid" src="~/img/borgoe.jpg" style="width:100%;" />
+
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
+
+                <img class="img-fluid" src="~/img/kirpalani.jpg" style="width:100%;" />
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
+
+                <img class="img-fluid" src="~/img/fatum.jpg" style="width:100%;" />
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
+
+                <img class="img-fluid" src="~/img/odoe.jpg" style="width:100%;" />
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
+                <img class="img-fluid" src="~/img/soela.jpg" style="width:100%;" />
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
+                <img class="img-fluid" src="~/img/afobakka.jpg" style="width:100%;" />
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
+                <img class="img-fluid" src="~/img/go2.jpg" style="width:100%;" />
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-3  gallery hvr-grow-rotate">
+                <img class="img-fluid" src="~/img/belasting.jpg" style="width:100%;" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@{ Html.RenderPartial("Content/_ContactBanner");}

@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "76c86d35e9d4bb9e")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.10")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b767c32f39e79fb7")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.11")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -252,6 +252,96 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CorporateIdentities, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// BlackBox Text
+		///</summary>
+		[ImplementPropertyType("blackBoxText")]
+		public IHtmlString BlackBoxText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("blackBoxText"); }
+		}
+
+		///<summary>
+		/// BlackBox Title
+		///</summary>
+		[ImplementPropertyType("blackBoxTitle")]
+		public string BlackBoxTitle
+		{
+			get { return this.GetPropertyValue<string>("blackBoxTitle"); }
+		}
+
+		///<summary>
+		/// subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+
+		///<summary>
+		/// subtitle2
+		///</summary>
+		[ImplementPropertyType("subtitle2")]
+		public string Subtitle2
+		{
+			get { return this.GetPropertyValue<string>("subtitle2"); }
+		}
+
+		///<summary>
+		/// subtitle3
+		///</summary>
+		[ImplementPropertyType("subtitle3")]
+		public string Subtitle3
+		{
+			get { return this.GetPropertyValue<string>("subtitle3"); }
+		}
+
+		///<summary>
+		/// text
+		///</summary>
+		[ImplementPropertyType("text")]
+		public IHtmlString Text
+		{
+			get { return this.GetPropertyValue<IHtmlString>("text"); }
+		}
+
+		///<summary>
+		/// text2
+		///</summary>
+		[ImplementPropertyType("text2")]
+		public IHtmlString Text2
+		{
+			get { return this.GetPropertyValue<IHtmlString>("text2"); }
+		}
+
+		///<summary>
+		/// text3
+		///</summary>
+		[ImplementPropertyType("text3")]
+		public IHtmlString Text3
+		{
+			get { return this.GetPropertyValue<IHtmlString>("text3"); }
+		}
+
+		///<summary>
+		/// title2
+		///</summary>
+		[ImplementPropertyType("title2")]
+		public string Title2
+		{
+			get { return this.GetPropertyValue<string>("title2"); }
+		}
+
+		///<summary>
+		/// title3
+		///</summary>
+		[ImplementPropertyType("title3")]
+		public string Title3
+		{
+			get { return this.GetPropertyValue<string>("title3"); }
 		}
 
 		///<summary>
