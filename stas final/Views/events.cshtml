@@ -1,5 +1,159 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Events>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
 }
+
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<section id="event_banner" style="background-image: url('@bannerImageUrl');
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 400px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-white">
+                        <h1 class="card-title">@Umbraco.Field("witteBox")</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-dark">
+                        <h2 class="card-title">@Umbraco.Field("zwarteText")</h2>
+                        <h4 class="card-title">@Umbraco.Field("bannerAuthor", insertBefore: "-")</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8-offset-2">
+            <h1 class="event-text">@Umbraco.Field("titleText")</h1>
+        </div>
+        <br>
+        <div class="col-md-10-offset-1">
+            <p>@Umbraco.Field("subtitle")</p>
+        </div>
+    </div>
+</div>
+
+<!-- charts -->
+<script>
+    $(document).ready(function () {
+        var ctx = $("#canvasLogistiek").get(0).getContext("2d");
+        var data = [
+            {
+                value: 100,
+                color: "#eeeeee",
+                highlight: "grey",
+                label: "Logistiek"
+            }
+        ];
+        var chart = new Chart(ctx).Doughnut(data);
+    });
+    $(document).ready(function () {
+        var ctx = $("#canvasConcept").get(0).getContext("2d");
+        var data = [
+            {
+                value: 100,
+                color: "#eeeeee",
+                highlight: "grey",
+                label: "Concept"
+            }
+        ];
+        var chart = new Chart(ctx).Doughnut(data);
+    });
+    $(document).ready(function () {
+        var ctx = $("#canvasPers").get(0).getContext("2d");
+        var data = [
+            {
+                value: 100,
+                color: "#eeeeee",
+                highlight: "grey",
+                label: "Pers"
+            }
+        ];
+        var chart = new Chart(ctx).Doughnut(data);
+    });
+</script>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-2 col-md-offset-1">
+            <img src="~/img/logistiek.png" class="img-responsive">
+
+
+            <h2 class="under-chart-text">@Umbraco.Field("logistiekTitle")</h2>
+            <center><p>@Umbraco.Field("logistiekText")</p></center>
+        </div>
+        <div class="col-md-2 col-md-offset-2">
+            <img src="~/img/concept.png" class="img-responsive">
+
+            </canvas>
+
+
+
+            <h2 class="under-chart-text2">@Umbraco.Field("conceptTitle")</h2>
+            <center><p>@Umbraco.Field("conceptText")</p></center>
+        </div>
+        <div class="col-md-2 col-md-offset-2">
+            <img src="~/img/pers.png" class="img-responsive">
+
+
+            <h2 class="under-chart-text2">@Umbraco.Field("persTitle")</h2>
+            <center><p>@Umbraco.Field("persText")</p></center>
+        </div>
+    </div>
+</div>
+
+
+
+       </div>
+
+
+<br>
+<section id="gallery">
+    <div class="container-fluid gallery">
+        <div class="row no-pad gallery">
+            <div class="col-md-6  ">
+                <div class="col-md-6 gallery">
+                    <img class="img-responsive hvr-grow-rotate" src="~/img/eventsTok.jpg" />
+                </div>
+                <div class="col-md-6 gallery">
+                    <img class="img-responsive hvr-grow-rotate" src="~/img/eventsBacardi.jpg" />
+                </div>
+                <div class="row no-pad">
+                    <div class="col-md-6 gallery">
+                        <img class="img-responsive hvr-grow-rotate" src="~/img/eventsStaatsolie.jpg" />
+                    </div>
+                    <div class="col-md-6 gallery">
+                        <img class="img-responsive hvr-grow-rotate" src="~/img/eventsHel.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 no-pad gallery">
+                <div class="col-md-12 gallery">
+                    <img class="img-responsive hvr-grow-rotate" src="~/img/eventsPink.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+
+    </div>
+</section>
+@{ Html.RenderPartial("Content/_QuoteSlider");}
+@{ Html.RenderPartial("Content/_ContactBanner");}

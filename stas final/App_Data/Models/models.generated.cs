@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b767c32f39e79fb7")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.11")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c67df07f1aad7e1")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.12")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -511,6 +511,69 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Events, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// conceptText
+		///</summary>
+		[ImplementPropertyType("conceptText")]
+		public IHtmlString ConceptText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("conceptText"); }
+		}
+
+		///<summary>
+		/// conceptTitle
+		///</summary>
+		[ImplementPropertyType("conceptTitle")]
+		public string ConceptTitle
+		{
+			get { return this.GetPropertyValue<string>("conceptTitle"); }
+		}
+
+		///<summary>
+		/// logistiekText
+		///</summary>
+		[ImplementPropertyType("logistiekText")]
+		public IHtmlString LogistiekText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("logistiekText"); }
+		}
+
+		///<summary>
+		/// logistiekTitle
+		///</summary>
+		[ImplementPropertyType("logistiekTitle")]
+		public string LogistiekTitle
+		{
+			get { return this.GetPropertyValue<string>("logistiekTitle"); }
+		}
+
+		///<summary>
+		/// PersText
+		///</summary>
+		[ImplementPropertyType("persText")]
+		public IHtmlString PersText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("persText"); }
+		}
+
+		///<summary>
+		/// PersTitle
+		///</summary>
+		[ImplementPropertyType("persTitle")]
+		public string PersTitle
+		{
+			get { return this.GetPropertyValue<string>("persTitle"); }
+		}
+
+		///<summary>
+		/// subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return this.GetPropertyValue<IHtmlString>("subtitle"); }
 		}
 
 		///<summary>
