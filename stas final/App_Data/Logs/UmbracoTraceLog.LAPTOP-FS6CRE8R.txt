@@ -2032,3 +2032,40 @@ System.NullReferenceException: Object reference not set to an instance of an obj
  2018-07-03 16:10:43,988 [P10384/D8/T51] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
  2018-07-03 16:10:44,783 [P10384/D8/T51] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
  2018-07-03 16:10:44,783 [P10384/D8/T57] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:12:21,257 [P10384/D8/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:12:22,208 [P10384/D8/T57] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:12:22,219 [P10384/D8/T65] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:12:37,251 [P10384/D8/T65] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:12:37,987 [P10384/D8/T65] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:12:38,056 [P10384/D8/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:12:38,328 [P10384/D8/T68] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:15:29,069 [P10384/D8/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field onlyImages
+ 2018-07-03 16:15:29,070 [P10384/D8/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field disableFolderSelect
+ 2018-07-03 16:15:29,070 [P10384/D8/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field startNodeId
+ 2018-07-03 16:15:34,805 [P10384/D8/T61] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field onlyImages
+ 2018-07-03 16:15:34,805 [P10384/D8/T61] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field disableFolderSelect
+ 2018-07-03 16:15:34,806 [P10384/D8/T61] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field startNodeId
+ 2018-07-03 16:15:36,185 [P10384/D8/T59] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field onlyImages
+ 2018-07-03 16:15:36,185 [P10384/D8/T59] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field disableFolderSelect
+ 2018-07-03 16:15:36,186 [P10384/D8/T59] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field startNodeId
+ 2018-07-03 16:16:42,382 [P10384/D8/T68] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'home' with Id '1070' has been published.
+ 2018-07-03 16:16:47,141 [P10384/D8/T7] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 16:16:47,294 [P10384/D8/T7] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 16:16:47,585 [P10384/D8/T57] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-07-03 16:16:47,588 [P10384/D8/T57] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 2ms)
+ 2018-07-03 16:16:47,591 [P10384/D8/T57] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.HealthCheck.HealthCheck
+ 2018-07-03 16:16:47,688 [P10384/D8/T57] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.HealthCheck.HealthCheck (took 97ms)
+ 2018-07-03 16:16:49,158 [P10384/D8/T37] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:16:50,846 [P10384/D8/T58] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:16:50,856 [P10384/D8/T37] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:16:50,927 [P10384/D8/T61] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:16:54,526 [P10384/D8/T58] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:16:55,413 [P10384/D8/T58] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:16:55,549 [P10384/D8/T68] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:16:55,601 [P10384/D8/T57] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 16:19:24,334 [P10384/D8/T68] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'home' with Id '1070' has been published.
+ 2018-07-03 16:19:31,026 [P10384/D8/T68] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 16:19:31,123 [P10384/D8/T68] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 16:19:42,472 [P10384/D8/T60] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'home' with Id '1070' has been published.
+ 2018-07-03 16:19:46,691 [P10384/D8/T60] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 16:19:46,723 [P10384/D8/T60] INFO  umbraco.content - Saved Xml to file.
