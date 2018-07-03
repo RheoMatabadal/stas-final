@@ -1,10 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.CorporateIdentities>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-                /**/
+    /**/
 
-                Layout = "Master.cshtml";
-                string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    Layout = "Master.cshtml";
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    IEnumerable<IPublishedContent> underImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("fotosOnder");
 }
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -108,18 +109,21 @@
 
         </div>
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
-                <img class="img-fluid" src="~/img/soela.jpg" style="width:100%;" />
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
-                <img class="img-fluid" src="~/img/afobakka.jpg" style="width:100%;" />
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
-                <img class="img-fluid" src="~/img/go2.jpg" style="width:100%;" />
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-3  gallery hvr-grow-rotate">
-                <img class="img-fluid" src="~/img/belasting.jpg" style="width:100%;" />
-            </div>
+            @if (underImages != null && underImages.Count() > 0)
+    {
+        <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
+            <img class="img-fluid" src="@(underImages.First().Url)?width=337&height=337&mode=crop" style="width:100%;" />
+        </div>
+foreach (IPublishedContent image in underImages.Skip(1))
+{
+        <div class="col-md-3 col-sm-6 col-xs-3 gallery hvr-grow-rotate">
+            <img class="img-fluid" src="@(image.Url)?width=337&height=337&mode=crop" style="width:100%;" />
+        </div>
+}
+}
+
+
+          
         </div>
     </div>
 </section>

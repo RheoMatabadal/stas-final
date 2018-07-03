@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1d65fef3edea413d")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b8404c2104f1f596")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -297,6 +297,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public string BlackBoxTitle
 		{
 			get { return this.GetPropertyValue<string>("blackBoxTitle"); }
+		}
+
+		///<summary>
+		/// fotosOnder: foto's onder het zwarte block
+		///</summary>
+		[ImplementPropertyType("fotosOnder")]
+		public IEnumerable<IPublishedContent> FotosOnder
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("fotosOnder"); }
+		}
+
+		///<summary>
+		/// fotosRechts: foto's rechts van het zwarte block
+		///</summary>
+		[ImplementPropertyType("fotosRechts")]
+		public IEnumerable<IPublishedContent> FotosRechts
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("fotosRechts"); }
 		}
 
 		///<summary>
