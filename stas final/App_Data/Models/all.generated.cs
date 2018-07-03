@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4b74952a3a18740b")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1d65fef3edea413d")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 
 // FILE: models.generated.cs
@@ -188,6 +188,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Subtitle
 		{
 			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+
+		///<summary>
+		/// underBannerImages
+		///</summary>
+		[ImplementPropertyType("underBannerImages")]
+		public IEnumerable<IPublishedContent> UnderBannerImages
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("underBannerImages"); }
 		}
 
 		///<summary>

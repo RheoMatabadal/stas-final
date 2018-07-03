@@ -6,6 +6,7 @@
                 Layout = "Master.cshtml";
                 string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
                 string CTAImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
+                IEnumerable<IPublishedContent> abtUnderBannerImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("underBannerImages");
 }
 
 <section id="about_banner" style=" background-image: url('@bannerImageUrl')" ;
@@ -41,18 +42,19 @@
 <section id="onder-banner">
     <div class="container-fluid-no-pad">
         <div class="row no-pad">
-            <div class="col-md-3">
-                <img src="~/img/abt_corporate.jpg" class="img-responsive gallery hvr-grow">
-            </div>
-            <div class="col-md-3">
-                <img src="~/img/abt_graphic.jpg" class="img-responsive gallery hvr-grow">
-            </div>
-            <div class="col-md-3">
-                <img src="~/img/abt_film.jpg" class="img-responsive gallery hvr-grow">
-            </div>
-            <div class="col-md-3">
-                <img src="~/img/abt_events.jpg" class="img-responsive gallery hvr-grow">
-            </div>
+            @if (abtUnderBannerImages != null && abtUnderBannerImages.Count() > 0)
+    {
+        <div class="col-md-3">
+            <img src="@(abtUnderBannerImages.First().Url)?width=337&height=288&mode=crop" class="img-responsive gallery hvr-grow">
+        </div>
+foreach (IPublishedContent image in abtUnderBannerImages.Skip(1))
+{
+        <div class="col-md-3">
+            <img src="@(image.Url)?width=337&height=288&mode=crop" class="img-responsive gallery hvr-grow">
+        </div>
+}
+}
+
         </div>
     </div>
 </section>
