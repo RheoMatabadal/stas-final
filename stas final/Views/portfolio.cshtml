@@ -1,5 +1,152 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Portfolio>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
 }
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<section id="portfolio_banner" style=" background-image: url('@bannerImageUrl');
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 400px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-white">
+                        <h1 class="card-title">@Umbraco.Field("witteBox")</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-dark">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">HOME</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">PORTFOLIO</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<nav class="navbar navbar-inverse borden no-pad">
+    <div class="container-fluid no-pad">
+        <ul class="nav navbar-nav">
+            <li class="button active" data-filter="all"><a>Alles</a></li>
+            <li class="button" data-filter="corporateIdentity"><a>Corporate Identity</a></li>
+            <li class="button" data-filter="graphicDesign"><a>Graphic Design</a></li>
+            <li class="button" data-filter="filmVideo"><a>Film/Video</a></li>
+            <li class="button" data-filter="Events"><a>Events</a></li>
+        </ul>
+    </div>
+</nav>
+<section id="portfolio-items">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-6 gallery filter corporateIdentity moreBox imager">
+                <img class="img-fluid" src="~/img/borgoe.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter corporateIdentity moreBox imager">
+                <img class="img-fluid" src="~/img/belasting.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter graphicDesign moreBox  imager">
+                <img class="img-fluid" src="~/img/fatum.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter filmVideo moreBox  imager">
+                <img class="img-fluid" src="~/img/afobakka.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter Events moreBox  imager">
+                <img class="img-fluid" src="~/img/hermitage.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter Events moreBox  imager">
+                <img class="img-fluid" src="~/img/kirpalani.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter Events moreBox  imager">
+                <img class="img-fluid" src="~/img/borgoe.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter filmVideo moreBox  imager">
+                <img class="img-fluid" src="~/img/belasting.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter filmVideo moreBox  imager">
+                <img class="img-fluid" src="~/img/fatum.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter graphicDesign moreBox  imager">
+                <img class="img-fluid" src="~/img/afobakka.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter filmvideo moreBox imager ">
+                <img class="img-fluid" src="~/img/hermitage.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter graphicDesign moreBox ">
+                <img class="img-fluid " src="~/img/kirpalani.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid-no-pad">
+        <div class="row">
+            <div class="col-md-12 gallery">
+                <div id="loadMore">
+                    <a href="#" class="loadMore">LOAD MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@{ Html.RenderPartial("Content/_ContactBanner");}

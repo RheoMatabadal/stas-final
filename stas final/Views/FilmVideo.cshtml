@@ -1,0 +1,321 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.FilmVideo>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Master.cshtml";
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    string CTAImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
+}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<section id="film_banner" style="background-image: url('@bannerImageUrl');
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 450px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-white">
+                        <h1 class="card-title">@Umbraco.Field("witteBox")</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-dark">
+                        <h2 class="card-title">@Umbraco.Field("zwarteText")</h2>
+                        <h4 class="card-title">@Umbraco.Field("bannerAuthor", insertBefore: "-")</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-6">
+            <h1>@Umbraco.Field("titleText")</h1>
+
+        </div>
+        <br>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>@Umbraco.Field("subtitle")</h2>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <p>@Umbraco.Field("filmTextCol1")</p>
+        </div>
+        <div class="col-md-6">
+            <p>@Umbraco.Field("filmTextCol2")</p>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+<br>
+<br>
+<br>
+<section id="gallery">
+    <div class="container-fluid-no-pad">
+        <div class="row">
+
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+                <style>
+                    .embed-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
+                    }
+
+                        .embed-container iframe, .embed-container object, .embed-container embed {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/209398590' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+                <style>
+                    .embed-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
+                    }
+
+                        .embed-container iframe, .embed-container object, .embed-container embed {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/209390725' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+
+                <style>
+                    .embed-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
+                    }
+
+                        .embed-container iframe, .embed-container object, .embed-container embed {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/209398590' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+            </div>
+
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+
+                <style>
+                    .embed-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
+                    }
+
+                        .embed-container iframe, .embed-container object, .embed-container embed {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/209390725' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+                <style>
+                    .embed-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
+                    }
+
+                        .embed-container iframe, .embed-container object, .embed-container embed {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/175259823' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+                <style>
+                    .embed-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
+                    }
+
+                        .embed-container iframe, .embed-container object, .embed-container embed {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/175259823' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+
+                <style>
+                    .embed-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
+                    }
+
+                        .embed-container iframe, .embed-container object, .embed-container embed {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/175407841' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+                <style>
+                    .embed-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
+                    }
+
+                        .embed-container iframe, .embed-container object, .embed-container embed {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/187837794' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <style>
+                        .embed-container {
+                            position: relative;
+                            padding-bottom: 56.25%;
+                            height: 0;
+                            overflow: hidden;
+                            max-width: 100%;
+                        }
+
+                            .embed-container iframe, .embed-container object, .embed-container embed {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                            }
+                    </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/175407841' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-sm-6 col-xs-12 moreBox gallery no-pad hvr-grow">
+
+                <style>
+                    .embed-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
+                    }
+
+                        .embed-container iframe, .embed-container object, .embed-container embed {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                </style><div class='embed-container'><iframe src='https://player.vimeo.com/video/209398590' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+            </div>
+            <div class="container-fluid-no-pad">
+                <div class="row">
+                    <div class="col-md-12 gallery">
+                        <div id="loadMore">
+                            <a href="#" class="loadMore">LOAD MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+</section>
+<section id="film-cta-banner" style="background-image: url('@CTAImageUrl');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height:700px;
+	height: 100%;
+	width: 100%;	">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+
+                <h2 class="cta-text">@Umbraco.Field("ctaText")</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-5 col-xs-">
+                <button class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">LET'S GET IN TOUCH</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+@{ Html.RenderPartial("Content/_CTAProccessing");}
+@{ Html.RenderPartial("Content/_ContactBanner");}

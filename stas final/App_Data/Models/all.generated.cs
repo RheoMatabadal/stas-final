@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1dfa8507695c040b")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "863ab1ab86558727")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -233,6 +233,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent CtaImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.CTA.GetCtaImage(this); }
+		}
+
+		///<summary>
+		/// cta Text
+		///</summary>
+		[ImplementPropertyType("ctaText")]
+		public string CtaText
+		{
+			get { return Umbraco.Web.PublishedContentModels.CTA.GetCtaText(this); }
 		}
 
 		///<summary>
@@ -549,6 +558,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// cta Text
+		///</summary>
+		[ImplementPropertyType("ctaText")]
+		public string CtaText
+		{
+			get { return Umbraco.Web.PublishedContentModels.CTA.GetCtaText(this); }
+		}
+
+		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("titleText")]
@@ -703,7 +721,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>portfolio</summary>
 	[PublishedContentModel("portfolio")]
-	public partial class Portfolio : PublishedContentModel
+	public partial class Portfolio : PublishedContentModel, IArtist, IBanner
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "portfolio";
@@ -724,6 +742,51 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Portfolio, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Artist Image
+		///</summary>
+		[ImplementPropertyType("artistImage")]
+		public IPublishedContent ArtistImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Banner Author
+		///</summary>
+		[ImplementPropertyType("bannerAuthor")]
+		public string BannerAuthor
+		{
+			get { return Umbraco.Web.PublishedContentModels.Banner.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// Banner Foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.Banner.GetBannerImage(this); }
+		}
+
+		///<summary>
+		/// witte balk
+		///</summary>
+		[ImplementPropertyType("witteBox")]
+		public string WitteBox
+		{
+			get { return Umbraco.Web.PublishedContentModels.Banner.GetWitteBox(this); }
+		}
+
+		///<summary>
+		/// zwarte Balk
+		///</summary>
+		[ImplementPropertyType("zwarteText")]
+		public string ZwarteText
+		{
+			get { return Umbraco.Web.PublishedContentModels.Banner.GetZwarteText(this); }
 		}
 	}
 
@@ -870,6 +933,9 @@ namespace Umbraco.Web.PublishedContentModels
 	{
 		/// <summary>CTAImage</summary>
 		IPublishedContent CtaImage { get; }
+
+		/// <summary>cta Text</summary>
+		string CtaText { get; }
 	}
 
 	/// <summary>CTA</summary>
@@ -908,6 +974,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for CTAImage</summary>
 		public static IPublishedContent GetCtaImage(ICTA that) { return that.GetPropertyValue<IPublishedContent>("ctaImage"); }
+
+		///<summary>
+		/// cta Text
+		///</summary>
+		[ImplementPropertyType("ctaText")]
+		public string CtaText
+		{
+			get { return GetCtaText(this); }
+		}
+
+		/// <summary>Static getter for cta Text</summary>
+		public static string GetCtaText(ICTA that) { return that.GetPropertyValue<string>("ctaText"); }
 	}
 
 	// Mixin content Type 1079 with alias "textSection"
@@ -954,6 +1032,131 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Title</summary>
 		public static string GetTitleText(ITextSection that) { return that.GetPropertyValue<string>("titleText"); }
+	}
+
+	/// <summary>Film Video</summary>
+	[PublishedContentModel("filmVideo")]
+	public partial class FilmVideo : PublishedContentModel, IArtist, IBanner, ICTA, ITextSection
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "filmVideo";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public FilmVideo(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FilmVideo, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// film text col 1
+		///</summary>
+		[ImplementPropertyType("filmTextCol1")]
+		public IHtmlString FilmTextCol1
+		{
+			get { return this.GetPropertyValue<IHtmlString>("filmTextCol1"); }
+		}
+
+		///<summary>
+		/// film text col 2
+		///</summary>
+		[ImplementPropertyType("filmTextCol2")]
+		public IHtmlString FilmTextCol2
+		{
+			get { return this.GetPropertyValue<IHtmlString>("filmTextCol2"); }
+		}
+
+		///<summary>
+		/// subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+
+		///<summary>
+		/// Artist Image
+		///</summary>
+		[ImplementPropertyType("artistImage")]
+		public IPublishedContent ArtistImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Banner Author
+		///</summary>
+		[ImplementPropertyType("bannerAuthor")]
+		public string BannerAuthor
+		{
+			get { return Umbraco.Web.PublishedContentModels.Banner.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// Banner Foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.Banner.GetBannerImage(this); }
+		}
+
+		///<summary>
+		/// witte balk
+		///</summary>
+		[ImplementPropertyType("witteBox")]
+		public string WitteBox
+		{
+			get { return Umbraco.Web.PublishedContentModels.Banner.GetWitteBox(this); }
+		}
+
+		///<summary>
+		/// zwarte Balk
+		///</summary>
+		[ImplementPropertyType("zwarteText")]
+		public string ZwarteText
+		{
+			get { return Umbraco.Web.PublishedContentModels.Banner.GetZwarteText(this); }
+		}
+
+		///<summary>
+		/// CTAImage
+		///</summary>
+		[ImplementPropertyType("ctaImage")]
+		public IPublishedContent CtaImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CTA.GetCtaImage(this); }
+		}
+
+		///<summary>
+		/// cta Text
+		///</summary>
+		[ImplementPropertyType("ctaText")]
+		public string CtaText
+		{
+			get { return Umbraco.Web.PublishedContentModels.CTA.GetCtaText(this); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("titleText")]
+		public string TitleText
+		{
+			get { return Umbraco.Web.PublishedContentModels.TextSection.GetTitleText(this); }
+		}
 	}
 
 	/// <summary>Folder</summary>
