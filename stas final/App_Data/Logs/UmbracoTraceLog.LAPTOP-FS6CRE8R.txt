@@ -2584,3 +2584,109 @@ System.NullReferenceException: Object reference not set to an instance of an obj
  2018-07-03 20:52:09,582 [P8792/D2/T18] INFO  umbraco.content - Saved Xml to file.
  2018-07-03 20:52:09,594 [P8792/D2/T18] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
  2018-07-03 20:52:09,614 [P8792/D2/T32] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:11:48,712 [P8792/D2/T54] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: rheo.matabadal.natin@gmail.com, IP Address: ::1
+ 2018-07-03 21:11:52,325 [P8792/D2/T54] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username rheo.matabadal.natin@gmail.com from IP address ::1
+ 2018-07-03 21:11:52,328 [P8792/D2/T54] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: rheo.matabadal.natin@gmail.com logged in from IP address ::1
+ 2018-07-03 21:13:19,421 [P8792/D2/T58] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:13:19,466 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:13:19,502 [P8792/D2/T58] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:13:19,513 [P8792/D2/T58] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:13:19,515 [P8792/D2/T45] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:13:19,558 [P8792/D2/T58] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:13:19,624 [P8792/D2/T58] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:13:19,730 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:13:19,784 [P8792/D2/T57] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:19:59,678 [P8792/D2/T56] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 21:20:04,536 [P8792/D2/T57] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 21:20:04,586 [P8792/D2/T57] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 21:20:18,088 [P8792/D2/T54] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 21:20:21,401 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:20:21,568 [P8792/D2/T45] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:20:21,593 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:20:21,607 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:20:21,624 [P8792/D2/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:20:21,667 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:20:21,680 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:20:21,725 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:20:21,799 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:20:22,733 [P8792/D2/T55] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 21:20:22,845 [P8792/D2/T55] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 21:24:12,196 [P8792/D2/T53] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:24:12,296 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:24:12,309 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:24:12,328 [P8792/D2/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:24:12,338 [P8792/D2/T56] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:24:12,366 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:24:12,378 [P8792/D2/T56] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:24:12,433 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:24:12,510 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 21:39:13,518 [P8792/D2/T54] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 21:39:18,766 [P8792/D2/T55] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 21:39:18,795 [P8792/D2/T55] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 21:39:54,321 [P8792/D2/T46] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 21:39:58,579 [P8792/D2/T56] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 21:39:58,610 [P8792/D2/T56] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 21:40:23,933 [P8792/D2/T47] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 21:40:28,281 [P8792/D2/T55] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 21:40:28,317 [P8792/D2/T55] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 21:41:36,306 [P8792/D2/T46] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 21:41:40,930 [P8792/D2/T45] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 21:41:40,991 [P8792/D2/T45] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 21:42:21,891 [P8792/D2/T55] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 21:42:26,735 [P8792/D2/T56] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 21:42:26,759 [P8792/D2/T56] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 21:55:21,274 [P8792/D2/T54] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: rheo.matabadal.natin@gmail.com, IP Address: ::1
+ 2018-07-03 22:54:02,613 [P8792/D2/T47] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username rheo.matabadal.natin@gmail.com from IP address ::1
+ 2018-07-03 22:54:02,613 [P8792/D2/T47] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: rheo.matabadal.natin@gmail.com logged in from IP address ::1
+ 2018-07-03 22:57:14,579 [P8792/D2/T56] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 22:57:14,639 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 22:57:14,651 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 22:57:14,655 [P8792/D2/T46] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 22:57:14,671 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 22:57:14,683 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 22:57:14,731 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 22:57:14,779 [P8792/D2/T45] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 22:57:14,815 [P8792/D2/T53] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:10:44,841 [P8792/D2/T59] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 23:10:49,298 [P8792/D2/T58] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 23:10:49,354 [P8792/D2/T58] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 23:10:52,084 [P8792/D2/T57] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-07-03 23:10:52,084 [P8792/D2/T57] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 1ms)
+ 2018-07-03 23:10:52,084 [P8792/D2/T57] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.HealthCheck.HealthCheck
+ 2018-07-03 23:10:52,774 [P8792/D2/T57] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.HealthCheck.HealthCheck (took 686ms)
+ 2018-07-03 23:10:54,770 [P8792/D2/T57] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:10:54,883 [P8792/D2/T59] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:10:54,959 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:10:54,991 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:10:55,007 [P8792/D2/T59] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:10:55,019 [P8792/D2/T59] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:10:55,119 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:10:55,131 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:10:55,139 [P8792/D2/T59] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:20,318 [P8792/D2/T53] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:20,402 [P8792/D2/T57] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:20,410 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:20,518 [P8792/D2/T58] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:20,622 [P8792/D2/T45] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:20,694 [P8792/D2/T59] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:47,713 [P8792/D2/T59] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:47,933 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:47,981 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:48,029 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:48,037 [P8792/D2/T56] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:48,085 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:48,133 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:48,141 [P8792/D2/T47] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:13:48,145 [P8792/D2/T54] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field maxChars
+ 2018-07-03 23:26:53,058 [P8792/D2/T59] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 23:26:58,561 [P8792/D2/T45] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 23:26:58,622 [P8792/D2/T45] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 23:27:37,341 [P8792/D2/T46] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 23:27:43,114 [P8792/D2/T46] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 23:27:43,353 [P8792/D2/T46] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 23:28:07,623 [P8792/D2/T57] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 23:28:12,198 [P8792/D2/T59] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 23:28:12,251 [P8792/D2/T59] INFO  umbraco.content - Saved Xml to file.
+ 2018-07-03 23:28:15,805 [P8792/D2/T47] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Graphic Design' with Id '1085' has been published.
+ 2018-07-03 23:28:20,053 [P8792/D2/T56] INFO  umbraco.content - Save Xml to file...
+ 2018-07-03 23:28:20,089 [P8792/D2/T56] INFO  umbraco.content - Saved Xml to file.

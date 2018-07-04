@@ -4,6 +4,11 @@
     Layout = "Master.cshtml";
     string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
     string CTAImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
+    string ontwerpFotoUrl= Model.Content.GetPropertyValue<IPublishedContent>("ontwerpFoto").Url;
+    string dtpFotoUrl= Model.Content.GetPropertyValue<IPublishedContent>("dtpFoto").Url;
+    string webdesignFotoUrl= Model.Content.GetPropertyValue<IPublishedContent>("webdesignFoto").Url;
+    string adobeCCFotoUrl= Model.Content.GetPropertyValue<IPublishedContent>("adobeCCFoto").Url;
+    IEnumerable<IPublishedContent> graphicImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("graphicImages");
 }
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <section id="graphic_banner" style=" background-image: url('@bannerImageUrl');
@@ -68,14 +73,14 @@
             <!--  <canvas id="canvasDesign" width="200" height="200">
 
              </canvas> -->
-            <img src="~/img/gr75.png" class="img-responsive">
+            <img src="@ontwerpFotoUrl" class="img-responsive">
             <h3 class="under-chart-text">@Umbraco.Field("ontwerp")</h3>
         </div>
         <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-2 ">
             <!--    <canvas id="canvasDtp" width="200" height="200">
 
                </canvas> -->
-            <img src="~/img/gr84.png" class="img-responsive">
+            <img src="@dtpFotoUrl" class="img-responsive">
             <h3 class="under-chart-text">@Umbraco.Field("dTP")</h3>
         </div>
         <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-2  ">
@@ -83,14 +88,14 @@
             <!-- <canvas id="canvasWebDesign" width="200" height="200">
 
             </canvas> -->
-            <img src="~/img/gr61.png" class="img-responsive img61">
+            <img src="@webdesignFotoUrl" class="img-responsive img61">
             <h3 class="under-chart-text">@Umbraco.Field("webdesign")</h3>
         </div>
         <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-2 ">
             <!-- <canvas id="canvasAdobeCC" width="200" height="200">
 
             </canvas> -->
-            <img src="~/img/gr97.png" class="img-responsive">
+            <img src="@adobeCCFotoUrl" class="img-responsive">
             <h3 class="under-chart-text">@Umbraco.Field("adobeCC")</h3>
         </div>
 
@@ -107,33 +112,28 @@
 <section id="gallery">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
+            @if (graphicImages != null && graphicImages.Count() > 0)
+    {
+        <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
 
-                <img class="img-responsive" src="~/img/hermitage.jpg" />
+            <img class="img-responsive" src="@(graphicImages.First().Url)?width=450&height=450&mode=crop" />
 
+        </div>
+                foreach (IPublishedContent image in graphicImages.Skip(1))
+                {
+        <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
+            <img class="img-responsive" src="@(image.Url)?width=450&height=450&mode=crop" />
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
-                <img class="img-responsive" src="~/img/volksmuziek.jpg" />
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
-                <img class="img-responsive" src="~/img/fatum135.jpg" />
-            </div>
+                }
+            }
+
+            
+           
 
         </div>
 
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
-                <img class="img-responsive" src="~/img/hermitageMall.jpg" />
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
-                <img class="img-responsive" src="~/img/afobakkaKaart.jpg" />
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 gallery hvr-grow-rotate">
-                <img class="img-responsive" src="~/img/belastingdienst.jpg" />
-            </div>
-
         </div>
-    </div>
+    
 </section>
 <section id="cta-banner" style="background-image: url('@CTAImageUrl');
 	background-size: cover;

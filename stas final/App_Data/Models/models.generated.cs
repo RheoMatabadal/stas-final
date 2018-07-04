@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1f019d1cc02eee61")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e46a5ac663d885c6")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -506,12 +506,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// adobeCCFoto
+		///</summary>
+		[ImplementPropertyType("adobeCCFoto")]
+		public IPublishedContent AdobeCcfoto
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("adobeCCFoto"); }
+		}
+
+		///<summary>
 		/// DTP
 		///</summary>
 		[ImplementPropertyType("dTP")]
 		public string DTP
 		{
 			get { return this.GetPropertyValue<string>("dTP"); }
+		}
+
+		///<summary>
+		/// dtp Foto
+		///</summary>
+		[ImplementPropertyType("dtpFoto")]
+		public IPublishedContent DtpFoto
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("dtpFoto"); }
 		}
 
 		///<summary>
@@ -533,6 +551,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// graphicImages
+		///</summary>
+		[ImplementPropertyType("graphicImages")]
+		public IEnumerable<IPublishedContent> GraphicImages
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("graphicImages"); }
+		}
+
+		///<summary>
 		/// ontwerp
 		///</summary>
 		[ImplementPropertyType("ontwerp")]
@@ -542,12 +569,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// ontwerp Foto
+		///</summary>
+		[ImplementPropertyType("ontwerpFoto")]
+		public IPublishedContent OntwerpFoto
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("ontwerpFoto"); }
+		}
+
+		///<summary>
 		/// webdesign
 		///</summary>
 		[ImplementPropertyType("webdesign")]
 		public string Webdesign
 		{
 			get { return this.GetPropertyValue<string>("webdesign"); }
+		}
+
+		///<summary>
+		/// webdesignFoto
+		///</summary>
+		[ImplementPropertyType("webdesignFoto")]
+		public IPublishedContent WebdesignFoto
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("webdesignFoto"); }
 		}
 
 		///<summary>
