@@ -511,6 +511,10 @@
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\portfolio.cshtml" />
     <Content Include="Views\FilmVideo.cshtml" />
+    <Content Include="Views\Partials\SiteLayout\_Artist.cshtml" />
+    <Content Include="Views\Partials\SiteLayout\_Footer.cshtml" />
+    <Content Include="Views\Partials\SiteLayout\_Menu.cshtml" />
+    <Content Include="Views\Partials\SiteLayout\_STASTagline.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2274,7 +2278,6 @@
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\MacroPartials\" />
     <Folder Include="Views\Partials\Content\Contact\" />
-    <Folder Include="Views\Partials\SiteLayout\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

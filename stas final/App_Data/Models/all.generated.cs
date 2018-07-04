@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5ae4ee65c80d531c")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ada98bf79f6cfe71")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 
 // FILE: models.generated.cs
@@ -42,7 +42,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IArtist
+	public partial class Home : PublishedContentModel, IArtist, IHideControls, ISocialMediaLinks
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -129,6 +129,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Artist Bio
+		///</summary>
+		[ImplementPropertyType("artistBio")]
+		public IHtmlString ArtistBio
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
+		}
+
+		///<summary>
 		/// Artist Image
 		///</summary>
 		[ImplementPropertyType("artistImage")]
@@ -136,11 +145,74 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
 		}
+
+		///<summary>
+		/// Artist Name
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
+		}
+
+		///<summary>
+		/// portfolio Images
+		///</summary>
+		[ImplementPropertyType("portfolioImages")]
+		public IEnumerable<IPublishedContent> PortfolioImages
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
+		}
+
+		///<summary>
+		/// Umbraco Navi Hide: pagina onzichtbaar maken
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.HideControls.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
+		/// email
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return Umbraco.Web.PublishedContentModels.SocialMediaLinks.GetEmail(this); }
+		}
+
+		///<summary>
+		/// Facebook
+		///</summary>
+		[ImplementPropertyType("facebook")]
+		public string Facebook
+		{
+			get { return Umbraco.Web.PublishedContentModels.SocialMediaLinks.GetFacebook(this); }
+		}
+
+		///<summary>
+		/// phone Number
+		///</summary>
+		[ImplementPropertyType("phoneNumber")]
+		public string PhoneNumber
+		{
+			get { return Umbraco.Web.PublishedContentModels.SocialMediaLinks.GetPhoneNumber(this); }
+		}
+
+		///<summary>
+		/// Vimeo
+		///</summary>
+		[ImplementPropertyType("vimeo")]
+		public string Vimeo
+		{
+			get { return Umbraco.Web.PublishedContentModels.SocialMediaLinks.GetVimeo(this); }
+		}
 	}
 
 	/// <summary>About Us</summary>
 	[PublishedContentModel("aboutUs")]
-	public partial class AboutUs : PublishedContentModel, IArtist, IBanner, ICTA, ITextSection
+	public partial class AboutUs : PublishedContentModel, IArtist, IBanner, ICTA, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aboutUs";
@@ -200,12 +272,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Artist Bio
+		///</summary>
+		[ImplementPropertyType("artistBio")]
+		public IHtmlString ArtistBio
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
+		}
+
+		///<summary>
 		/// Artist Image
 		///</summary>
 		[ImplementPropertyType("artistImage")]
 		public IPublishedContent ArtistImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Artist Name
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
+		}
+
+		///<summary>
+		/// portfolio Images
+		///</summary>
+		[ImplementPropertyType("portfolioImages")]
+		public IEnumerable<IPublishedContent> PortfolioImages
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
 		}
 
 		///<summary>
@@ -263,6 +362,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Umbraco Navi Hide: pagina onzichtbaar maken
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.HideControls.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("titleText")]
@@ -274,7 +382,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Corporate Identities</summary>
 	[PublishedContentModel("corporateIdentities")]
-	public partial class CorporateIdentities : PublishedContentModel, IArtist, IBanner, ITextSection
+	public partial class CorporateIdentities : PublishedContentModel, IArtist, IBanner, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "corporateIdentities";
@@ -433,12 +541,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Artist Bio
+		///</summary>
+		[ImplementPropertyType("artistBio")]
+		public IHtmlString ArtistBio
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
+		}
+
+		///<summary>
 		/// Artist Image
 		///</summary>
 		[ImplementPropertyType("artistImage")]
 		public IPublishedContent ArtistImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Artist Name
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
+		}
+
+		///<summary>
+		/// portfolio Images
+		///</summary>
+		[ImplementPropertyType("portfolioImages")]
+		public IEnumerable<IPublishedContent> PortfolioImages
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
 		}
 
 		///<summary>
@@ -478,6 +613,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Umbraco Navi Hide: pagina onzichtbaar maken
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.HideControls.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("titleText")]
@@ -489,7 +633,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Graphic Design</summary>
 	[PublishedContentModel("graphicDesign")]
-	public partial class GraphicDesign : PublishedContentModel, IArtist, IBanner, ICTA, ITextSection
+	public partial class GraphicDesign : PublishedContentModel, IArtist, IBanner, ICTA, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "graphicDesign";
@@ -612,12 +756,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Artist Bio
+		///</summary>
+		[ImplementPropertyType("artistBio")]
+		public IHtmlString ArtistBio
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
+		}
+
+		///<summary>
 		/// Artist Image
 		///</summary>
 		[ImplementPropertyType("artistImage")]
 		public IPublishedContent ArtistImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Artist Name
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
+		}
+
+		///<summary>
+		/// portfolio Images
+		///</summary>
+		[ImplementPropertyType("portfolioImages")]
+		public IEnumerable<IPublishedContent> PortfolioImages
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
 		}
 
 		///<summary>
@@ -675,6 +846,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Umbraco Navi Hide: pagina onzichtbaar maken
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.HideControls.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("titleText")]
@@ -686,7 +866,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>events</summary>
 	[PublishedContentModel("events")]
-	public partial class Events : PublishedContentModel, IArtist, IBanner, ITextSection
+	public partial class Events : PublishedContentModel, IArtist, IBanner, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "events";
@@ -818,12 +998,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Artist Bio
+		///</summary>
+		[ImplementPropertyType("artistBio")]
+		public IHtmlString ArtistBio
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
+		}
+
+		///<summary>
 		/// Artist Image
 		///</summary>
 		[ImplementPropertyType("artistImage")]
 		public IPublishedContent ArtistImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Artist Name
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
+		}
+
+		///<summary>
+		/// portfolio Images
+		///</summary>
+		[ImplementPropertyType("portfolioImages")]
+		public IEnumerable<IPublishedContent> PortfolioImages
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
 		}
 
 		///<summary>
@@ -863,6 +1070,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Umbraco Navi Hide: pagina onzichtbaar maken
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.HideControls.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("titleText")]
@@ -874,7 +1090,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>portfolio</summary>
 	[PublishedContentModel("portfolio")]
-	public partial class Portfolio : PublishedContentModel, IArtist, IBanner
+	public partial class Portfolio : PublishedContentModel, IArtist, IBanner, IHideControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "portfolio";
@@ -898,12 +1114,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Artist Bio
+		///</summary>
+		[ImplementPropertyType("artistBio")]
+		public IHtmlString ArtistBio
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
+		}
+
+		///<summary>
 		/// Artist Image
 		///</summary>
 		[ImplementPropertyType("artistImage")]
 		public IPublishedContent ArtistImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Artist Name
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
+		}
+
+		///<summary>
+		/// portfolio Images
+		///</summary>
+		[ImplementPropertyType("portfolioImages")]
+		public IEnumerable<IPublishedContent> PortfolioImages
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
 		}
 
 		///<summary>
@@ -940,6 +1183,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ZwarteText
 		{
 			get { return Umbraco.Web.PublishedContentModels.Banner.GetZwarteText(this); }
+		}
+
+		///<summary>
+		/// Umbraco Navi Hide: pagina onzichtbaar maken
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.HideControls.GetUmbracoNaviHide(this); }
 		}
 	}
 
@@ -1038,8 +1290,17 @@ namespace Umbraco.Web.PublishedContentModels
 	/// <summary>Artist</summary>
 	public partial interface IArtist : IPublishedContent
 	{
+		/// <summary>Artist Bio</summary>
+		IHtmlString ArtistBio { get; }
+
 		/// <summary>Artist Image</summary>
 		IPublishedContent ArtistImage { get; }
+
+		/// <summary>Artist Name</summary>
+		string ArtistName { get; }
+
+		/// <summary>portfolio Images</summary>
+		IEnumerable<IPublishedContent> PortfolioImages { get; }
 	}
 
 	/// <summary>Artist</summary>
@@ -1068,6 +1329,18 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Artist Bio
+		///</summary>
+		[ImplementPropertyType("artistBio")]
+		public IHtmlString ArtistBio
+		{
+			get { return GetArtistBio(this); }
+		}
+
+		/// <summary>Static getter for Artist Bio</summary>
+		public static IHtmlString GetArtistBio(IArtist that) { return that.GetPropertyValue<IHtmlString>("artistBio"); }
+
+		///<summary>
 		/// Artist Image
 		///</summary>
 		[ImplementPropertyType("artistImage")]
@@ -1078,6 +1351,30 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Artist Image</summary>
 		public static IPublishedContent GetArtistImage(IArtist that) { return that.GetPropertyValue<IPublishedContent>("artistImage"); }
+
+		///<summary>
+		/// Artist Name
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return GetArtistName(this); }
+		}
+
+		/// <summary>Static getter for Artist Name</summary>
+		public static string GetArtistName(IArtist that) { return that.GetPropertyValue<string>("artistName"); }
+
+		///<summary>
+		/// portfolio Images
+		///</summary>
+		[ImplementPropertyType("portfolioImages")]
+		public IEnumerable<IPublishedContent> PortfolioImages
+		{
+			get { return GetPortfolioImages(this); }
+		}
+
+		/// <summary>Static getter for portfolio Images</summary>
+		public static IEnumerable<IPublishedContent> GetPortfolioImages(IArtist that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("portfolioImages"); }
 	}
 
 	// Mixin content Type 1077 with alias "cTA"
@@ -1189,7 +1486,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Film Video</summary>
 	[PublishedContentModel("filmVideo")]
-	public partial class FilmVideo : PublishedContentModel, IArtist, IBanner, ICTA, ITextSection
+	public partial class FilmVideo : PublishedContentModel, IArtist, IBanner, ICTA, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "filmVideo";
@@ -1240,12 +1537,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Artist Bio
+		///</summary>
+		[ImplementPropertyType("artistBio")]
+		public IHtmlString ArtistBio
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
+		}
+
+		///<summary>
 		/// Artist Image
 		///</summary>
 		[ImplementPropertyType("artistImage")]
 		public IPublishedContent ArtistImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Artist Name
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
+		}
+
+		///<summary>
+		/// portfolio Images
+		///</summary>
+		[ImplementPropertyType("portfolioImages")]
+		public IEnumerable<IPublishedContent> PortfolioImages
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
 		}
 
 		///<summary>
@@ -1303,6 +1627,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Umbraco Navi Hide: pagina onzichtbaar maken
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.HideControls.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("titleText")]
@@ -1310,6 +1643,143 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.TextSection.GetTitleText(this); }
 		}
+	}
+
+	// Mixin content Type 1125 with alias "hideControls"
+	/// <summary>Hide Controls</summary>
+	public partial interface IHideControls : IPublishedContent
+	{
+		/// <summary>Umbraco Navi Hide</summary>
+		bool UmbracoNaviHide { get; }
+	}
+
+	/// <summary>Hide Controls</summary>
+	[PublishedContentModel("hideControls")]
+	public partial class HideControls : PublishedContentModel, IHideControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "hideControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public HideControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HideControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Umbraco Navi Hide: pagina onzichtbaar maken
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return GetUmbracoNaviHide(this); }
+		}
+
+		/// <summary>Static getter for Umbraco Navi Hide</summary>
+		public static bool GetUmbracoNaviHide(IHideControls that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
+	}
+
+	// Mixin content Type 1126 with alias "socialMediaLinks"
+	/// <summary>Social media links</summary>
+	public partial interface ISocialMediaLinks : IPublishedContent
+	{
+		/// <summary>email</summary>
+		string Email { get; }
+
+		/// <summary>Facebook</summary>
+		string Facebook { get; }
+
+		/// <summary>phone Number</summary>
+		string PhoneNumber { get; }
+
+		/// <summary>Vimeo</summary>
+		string Vimeo { get; }
+	}
+
+	/// <summary>Social media links</summary>
+	[PublishedContentModel("socialMediaLinks")]
+	public partial class SocialMediaLinks : PublishedContentModel, ISocialMediaLinks
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "socialMediaLinks";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public SocialMediaLinks(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SocialMediaLinks, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// email
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return GetEmail(this); }
+		}
+
+		/// <summary>Static getter for email</summary>
+		public static string GetEmail(ISocialMediaLinks that) { return that.GetPropertyValue<string>("email"); }
+
+		///<summary>
+		/// Facebook
+		///</summary>
+		[ImplementPropertyType("facebook")]
+		public string Facebook
+		{
+			get { return GetFacebook(this); }
+		}
+
+		/// <summary>Static getter for Facebook</summary>
+		public static string GetFacebook(ISocialMediaLinks that) { return that.GetPropertyValue<string>("facebook"); }
+
+		///<summary>
+		/// phone Number
+		///</summary>
+		[ImplementPropertyType("phoneNumber")]
+		public string PhoneNumber
+		{
+			get { return GetPhoneNumber(this); }
+		}
+
+		/// <summary>Static getter for phone Number</summary>
+		public static string GetPhoneNumber(ISocialMediaLinks that) { return that.GetPropertyValue<string>("phoneNumber"); }
+
+		///<summary>
+		/// Vimeo
+		///</summary>
+		[ImplementPropertyType("vimeo")]
+		public string Vimeo
+		{
+			get { return GetVimeo(this); }
+		}
+
+		/// <summary>Static getter for Vimeo</summary>
+		public static string GetVimeo(ISocialMediaLinks that) { return that.GetPropertyValue<string>("vimeo"); }
 	}
 
 	/// <summary>Folder</summary>

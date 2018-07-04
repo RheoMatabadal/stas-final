@@ -1,23 +1,30 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{ 
+    IPublishedContent homePage = Umbraco.AssignedContentItem.AncestorOrSelf("home");
+    IEnumerable<IPublishedContent> navigationPages = homePage.Children(x => x.IsVisible());
+}
 <div id="myNav" class="overlay-menu">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <p>close</p>
+    @if (navigationPages != null && navigationPages.Count() > 0)
+    {
     <div class="overlay-content">
-        <a href="about.html">about STAS</a>
-        <a href="corporate.html">corporate identity</a>
-        <a href="graphic.html">graphic design</a>
-        <a href="film.html">film/video</a>
-        <a href="events.html">events</a>
-        <a href="film.html">film/video</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="index#contact">contact</a>
+        <a href="/">Home</a>
+        @foreach (IPublishedContent page in navigationPages)
+        {
+        <a href="@page.Url">@page.Name</a>
+        }
+
+
         <br>
         <i class="fas fa-envelope-square fa-2x social-space hvr-grow"></i>
         <i class="fas fa-phone-square fa-2x social-space hvr-grow"></i>
         <i class="fab fa-facebook-square fa-2x social-space hvr-grow"></i>
         <i class="fab fa-vimeo-square fa-2x social-space hvr-grow"></i>
     </div>
-</div>
+    }
+    </div>
 <div class="container">
     <div class="row">
         <div class="col-md-1 menu-box">
