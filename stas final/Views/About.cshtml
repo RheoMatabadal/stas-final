@@ -9,7 +9,7 @@
                 IEnumerable<IPublishedContent> abtUnderBannerImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("underBannerImages");
 }
 
-<section id="about_banner" style=" background-image: url('@bannerImageUrl')" ;
+<section id="about_banner" style=" background-image: url('@bannerImageUrl?width=1348&height=463&mode=crop');
          background-size: cover;
          background-repeat: no-repeat;
          min-height: 400px;">
@@ -145,7 +145,7 @@ foreach (IPublishedContent image in abtUnderBannerImages.Skip(1))
     </div>
 </section>
 
-<section id="cta-banner" style="background-image: url('@CTAImageUrl');
+<section id="cta-banner" style="background-image: url('@CTAImageUrl?width=1348&height=463&mode=crop');
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height:600px;

@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e46a5ac663d885c6")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5ae4ee65c80d531c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -718,6 +718,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ConceptTitle
 		{
 			get { return this.GetPropertyValue<string>("conceptTitle"); }
+		}
+
+		///<summary>
+		/// fotosLinks
+		///</summary>
+		[ImplementPropertyType("fotosLinks")]
+		public IEnumerable<IPublishedContent> FotosLinks
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("fotosLinks"); }
+		}
+
+		///<summary>
+		/// fotosRechts
+		///</summary>
+		[ImplementPropertyType("fotosRechts")]
+		public IEnumerable<IPublishedContent> FotosRechts
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("fotosRechts"); }
 		}
 
 		///<summary>

@@ -6,11 +6,13 @@
     string logistiekFotoUrl = Model.Content.GetPropertyValue<IPublishedContent>("logistiekFoto").Url;
     string conceptFotoUrl = Model.Content.GetPropertyValue<IPublishedContent>("conceptFoto").Url;
     string persFotoUrl = Model.Content.GetPropertyValue<IPublishedContent>("persFoto").Url;
+    IEnumerable<IPublishedContent> fotosLinks = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("FotosLinks");
+    IEnumerable<IPublishedContent> fotosRechts = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("FotosRechts");
 }
 
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<section id="event_banner" style="background-image: url('@bannerImageUrl');
+<section id="event_banner" style="background-image: url('@bannerImageUrl?width=1348&height=463&mode=crop');
         background-size: cover;
         background-repeat: no-repeat;
         min-height: 400px;">
@@ -131,30 +133,39 @@
     <div class="container-fluid gallery">
         <div class="row no-pad gallery">
             <div class="col-md-6  ">
-                <div class="col-md-6 gallery">
-                    <img class="img-responsive hvr-grow-rotate" src="~/img/eventsTok.jpg" />
-                </div>
-                <div class="col-md-6 gallery">
-                    <img class="img-responsive hvr-grow-rotate" src="~/img/eventsBacardi.jpg" />
-                </div>
-                <div class="row no-pad">
-                    <div class="col-md-6 gallery">
-                        <img class="img-responsive hvr-grow-rotate" src="~/img/eventsStaatsolie.jpg" />
-                    </div>
-                    <div class="col-md-6 gallery">
-                        <img class="img-responsive hvr-grow-rotate" src="~/img/eventsHel.jpg" />
-                    </div>
-                </div>
+                @if (fotosLinks != null && fotosLinks.Count() > 0)
+    {
+            <div class="col-md-6 gallery">
+                <img class="img-responsive hvr-grow-rotate" src="@(fotosLinks.First().Url)?width=337&height=337&mode=crop" />
             </div>
-            <div class="col-md-6 no-pad gallery">
-                <div class="col-md-12 gallery">
-                    <img class="img-responsive hvr-grow-rotate" src="~/img/eventsPink.jpg" />
-                </div>
+                    foreach (IPublishedContent image in fotosLinks.Skip(1))
+                    {
+            <div class="col-md-6 gallery">
+                <img class="img-responsive hvr-grow-rotate" src="@(image.Url)?width=337&height=337&mode=crop" />
             </div>
-        </div>
-        <div class="row">
+                    }
+                }
 
+
+            </div>
+            
+            <div class="col-md-6 no-pad gallery">
+                @if (fotosRechts != null && fotosRechts.Count() > 0)
+                {
+                <div class="col-md-12 gallery">
+                    <img class="img-responsive hvr-grow-rotate" src="@(fotosRechts.First().Url)?width=675&height=675&mode=crop" />
+                </div>
+                    foreach (IPublishedContent image in fotosRechts.Skip(1))
+                    {
+                <div class="col-md-12 gallery">
+                    <img class="img-responsive hvr-grow-rotate" src="@(image.Url)?width=675&height=675&mode=crop" />
+                </div>
+                    }
+                }
+                
+            </div>
         </div>
+        
 
     </div>
 </section>
