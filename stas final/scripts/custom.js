@@ -276,3 +276,8 @@ function closeArt() {
 // 		}
 
 // 	}
+$(document).ready(function(){
+    $('.lb-slides').slick({
+      arrows: false,
+    });
+});

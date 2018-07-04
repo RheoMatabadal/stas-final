@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ada98bf79f6cfe71")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bad67e18ed5c0e7c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -1780,6 +1780,41 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Vimeo</summary>
 		public static string GetVimeo(ISocialMediaLinks that) { return that.GetPropertyValue<string>("vimeo"); }
+	}
+
+	/// <summary>video item</summary>
+	[PublishedContentModel("videoItem")]
+	public partial class VideoItem : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "videoItem";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public VideoItem(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<VideoItem, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// embed URL
+		///</summary>
+		[ImplementPropertyType("embedURL")]
+		public Newtonsoft.Json.Linq.JToken EmbedUrl
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("embedURL"); }
+		}
 	}
 
 	/// <summary>Folder</summary>
