@@ -3,6 +3,9 @@
 @{
     Layout = "Master.cshtml";
     string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    string logistiekFotoUrl = Model.Content.GetPropertyValue<IPublishedContent>("logistiekFoto").Url;
+    string conceptFotoUrl = Model.Content.GetPropertyValue<IPublishedContent>("conceptFoto").Url;
+    string persFotoUrl = Model.Content.GetPropertyValue<IPublishedContent>("persFoto").Url;
 }
 
 
@@ -92,14 +95,14 @@
     <div class="row">
 
         <div class="col-md-2 col-md-offset-1">
-            <img src="~/img/logistiek.png" class="img-responsive">
+            <img src="@logistiekFotoUrl" class="img-responsive">
 
 
             <h2 class="under-chart-text">@Umbraco.Field("logistiekTitle")</h2>
             <center><p>@Umbraco.Field("logistiekText")</p></center>
         </div>
         <div class="col-md-2 col-md-offset-2">
-            <img src="~/img/concept.png" class="img-responsive">
+            <img src="@conceptFotoUrl" class="img-responsive">
 
             </canvas>
 
@@ -109,7 +112,7 @@
             <center><p>@Umbraco.Field("conceptText")</p></center>
         </div>
         <div class="col-md-2 col-md-offset-2">
-            <img src="~/img/pers.png" class="img-responsive">
+            <img src="@persFotoUrl" class="img-responsive">
 
 
             <h2 class="under-chart-text2">@Umbraco.Field("persTitle")</h2>

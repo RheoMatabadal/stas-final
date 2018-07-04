@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4f9bac60eb3ac795")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1f019d1cc02eee61")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -649,6 +649,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// concept Foto
+		///</summary>
+		[ImplementPropertyType("conceptFoto")]
+		public IPublishedContent ConceptFoto
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("conceptFoto"); }
+		}
+
+		///<summary>
 		/// conceptText
 		///</summary>
 		[ImplementPropertyType("conceptText")]
@@ -667,6 +676,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// logistiek Foto
+		///</summary>
+		[ImplementPropertyType("logistiekFoto")]
+		public IPublishedContent LogistiekFoto
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("logistiekFoto"); }
+		}
+
+		///<summary>
 		/// logistiekText
 		///</summary>
 		[ImplementPropertyType("logistiekText")]
@@ -682,6 +700,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string LogistiekTitle
 		{
 			get { return this.GetPropertyValue<string>("logistiekTitle"); }
+		}
+
+		///<summary>
+		/// Pers Foto
+		///</summary>
+		[ImplementPropertyType("persFoto")]
+		public IPublishedContent PersFoto
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("persFoto"); }
 		}
 
 		///<summary>
