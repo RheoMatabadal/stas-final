@@ -3,8 +3,10 @@
 @{
     Layout = "Master.cshtml";
     string homeLandingImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("homeLandingImage").Url;
-    string artistImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("artistImage").Url;
+   
     IEnumerable<IPublishedContent> abtSectionImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("aboutImages");
+    IEnumerable<IPublishedContent> sliderImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("homeslider");
+
 }
 
 <section id="home" style="min-height: 700px;
@@ -164,18 +166,18 @@
        <div class="lightbox">
   <div class="lb-images">
     <div class="lb-slides">
-      <div class="img-fill">
-        <img src="https://source.unsplash.com/random/2400x1600">
+        @if (sliderImages != null && sliderImages.Count() > 0)
+        {
+              <div class="img-fill">
+        <img src="@(sliderImages.First().Url)?width=1400&height=700&mode=crop">
       </div>
-      <div class="img-fill">
-        <img src="https://source.unsplash.com/random/2400x1600">
-      </div>
-      <div class="img-fill">
-        <img src="https://source.unsplash.com/random/800x1600">
-      </div>
-      <div class="img-fill">
-        <img src="https://source.unsplash.com/random/800x1600">
-      </div>
+            foreach (IPublishedContent image in sliderImages.Skip(1))
+            {
+              <div class="img-fill">
+                  <img src="@(image.Url)?width=1400&height=700&mode=crop">
+              </div>
+            }
+        }
     </div>
   </div>
 </div>

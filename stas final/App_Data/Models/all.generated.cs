@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bad67e18ed5c0e7c")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "dc75d8b30d1d3919")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -42,7 +42,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IArtist, IHideControls, ISocialMediaLinks
+	public partial class Home : PublishedContentModel, IHideControls, ISocialMediaLinks
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -129,39 +129,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Artist Bio
+		/// homeSlider
 		///</summary>
-		[ImplementPropertyType("artistBio")]
-		public IHtmlString ArtistBio
+		[ImplementPropertyType("homeSlider")]
+		public IEnumerable<IPublishedContent> HomeSlider
 		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
-		}
-
-		///<summary>
-		/// Artist Image
-		///</summary>
-		[ImplementPropertyType("artistImage")]
-		public IPublishedContent ArtistImage
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
-		}
-
-		///<summary>
-		/// Artist Name
-		///</summary>
-		[ImplementPropertyType("artistName")]
-		public string ArtistName
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
-		}
-
-		///<summary>
-		/// portfolio Images
-		///</summary>
-		[ImplementPropertyType("portfolioImages")]
-		public IEnumerable<IPublishedContent> PortfolioImages
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("homeSlider"); }
 		}
 
 		///<summary>
