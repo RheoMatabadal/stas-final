@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b3853f18d9c966")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "906a55e462c99b55")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.7")]
 
 
 // FILE: models.generated.cs
@@ -1939,6 +1939,130 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Twitter
 		{
 			get { return this.GetPropertyValue<string>("twitter"); }
+		}
+	}
+
+	/// <summary>Portfolio Item</summary>
+	[PublishedContentModel("portfolioItem")]
+	public partial class PortfolioItem : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "portfolioItem";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public PortfolioItem(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PortfolioItem, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// categorie
+		///</summary>
+		[ImplementPropertyType("categorie")]
+		public string Categorie
+		{
+			get { return this.GetPropertyValue<string>("categorie"); }
+		}
+
+		///<summary>
+		/// CategorieNaam
+		///</summary>
+		[ImplementPropertyType("categorieNaam")]
+		public object CategorieNaam
+		{
+			get { return this.GetPropertyValue("categorieNaam"); }
+		}
+
+		///<summary>
+		/// Display foto
+		///</summary>
+		[ImplementPropertyType("displayFoto")]
+		public IPublishedContent DisplayFoto
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("displayFoto"); }
+		}
+
+		///<summary>
+		/// Item naam
+		///</summary>
+		[ImplementPropertyType("itemNaam")]
+		public string ItemNaam
+		{
+			get { return this.GetPropertyValue<string>("itemNaam"); }
+		}
+
+		///<summary>
+		/// Omschrijving
+		///</summary>
+		[ImplementPropertyType("omschrijving")]
+		public IHtmlString Omschrijving
+		{
+			get { return this.GetPropertyValue<IHtmlString>("omschrijving"); }
+		}
+
+		///<summary>
+		/// Relatie
+		///</summary>
+		[ImplementPropertyType("relatie")]
+		public string Relatie
+		{
+			get { return this.GetPropertyValue<string>("relatie"); }
+		}
+
+		///<summary>
+		/// slider Fotos
+		///</summary>
+		[ImplementPropertyType("sliderFotos")]
+		public IEnumerable<IPublishedContent> SliderFotos
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderFotos"); }
+		}
+
+		///<summary>
+		/// werkzaamheden
+		///</summary>
+		[ImplementPropertyType("werkzaamheden")]
+		public IEnumerable<string> Werkzaamheden
+		{
+			get { return this.GetPropertyValue<IEnumerable<string>>("werkzaamheden"); }
+		}
+	}
+
+	/// <summary>PortfolioDetail</summary>
+	[PublishedContentModel("portfolioDetail")]
+	public partial class PortfolioDetail : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "portfolioDetail";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public PortfolioDetail(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PortfolioDetail, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 	}
 

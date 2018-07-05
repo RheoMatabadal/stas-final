@@ -53,90 +53,30 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-6 gallery filter corporateIdentity moreBox imager">
-                <img class="img-fluid" src="~/img/borgoe.jpg" style="width:100%;" />
+            @{
+        var selection = Model.Content.Site().FirstChild("portfolio").Children("portfolioItem")
+                            .Where(x => x.IsVisible());
+        var portfolio = Model.Content.Children();
+            }
+
+            @foreach (var p in portfolio)
+    {
+        if (p.HasValue("displayFoto"))
+        {
+            UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext);
+            IPublishedContent mediaItem = umbracoHelper.TypedMedia(p.GetPropertyValue("displayFoto").ToString());
+            <div class="col-md-6 gallery filter @p.GetPropertyValue("categorie") moreBox imager">
+                <img class="img-fluid" src="@mediaItem.GetCropUrl("portfolioFoto").ToString()" style="width:100%;" />
                 <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
+                    <h1 class="port-title">@p.GetPropertyValue("itemNaam")</h1>
+                    <h3 class="port-cat">@p.GetPropertyValue("categorieNaam")</h3>
                 </div>
             </div>
-            <div class="col-md-6 gallery filter corporateIdentity moreBox imager">
-                <img class="img-fluid" src="~/img/belasting.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter graphicDesign moreBox  imager">
-                <img class="img-fluid" src="~/img/fatum.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter filmVideo moreBox  imager">
-                <img class="img-fluid" src="~/img/afobakka.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter Events moreBox  imager">
-                <img class="img-fluid" src="~/img/hermitage.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter Events moreBox  imager">
-                <img class="img-fluid" src="~/img/kirpalani.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter Events moreBox  imager">
-                <img class="img-fluid" src="~/img/borgoe.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter filmVideo moreBox  imager">
-                <img class="img-fluid" src="~/img/belasting.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter filmVideo moreBox  imager">
-                <img class="img-fluid" src="~/img/fatum.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter graphicDesign moreBox  imager">
-                <img class="img-fluid" src="~/img/afobakka.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter filmvideo moreBox imager ">
-                <img class="img-fluid" src="~/img/hermitage.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
-            <div class="col-md-6 gallery filter graphicDesign moreBox ">
-                <img class="img-fluid " src="~/img/kirpalani.jpg" style="width:100%;" />
-                <div class="overlay2">
-                    <h1 class="port-title">test</h1>
-                    <h3 class="port-cat">Coporate Identitys</h3>
-                </div>
-            </div>
+}
+
+
+
+}
         </div>
     </div>
     <div class="container-fluid-no-pad">
