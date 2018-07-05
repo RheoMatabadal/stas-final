@@ -169,5 +169,74 @@
 
     </div>
 </section>
-@{ Html.RenderPartial("Content/_QuoteSlider");}
+<section id="quote-slider">
+    <div class="container-fluid">
+        <div class="row">
+            <div class='col-md-12 text-center'>
+
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-12-modified'>
+                <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                    <!-- Bottom Carousel Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#quote-carousel" data-slide-to="1"></li>
+                        <li data-target="#quote-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Carousel Slides / Quotes -->
+                    <div class="carousel-inner">
+
+                        <!-- Quote 1 -->
+                        <div class="item active">
+
+                            <blockquote>
+                                <div class="row box-white">
+
+                                    <div class="col-sm-9">
+                                        
+                                        <i class="fas fa-quote-left fa-4x"></i><p>@Umbraco.Field("quote")</p>
+                                        <small class="author">@Umbraco.Field("quoteAuthor")</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+
+                        </div>
+                        <!-- Quote 2 -->
+                        <div class="item">
+                            <blockquote>
+                                <div class="row box-white">
+
+                                    <div class="col-sm-9">
+                                        
+                                       <i class="fas fa-quote-left fa-4x"></i> <p>@Umbraco.Field("quote2")</p>
+                                        <small class="author">@Umbraco.Field("quote2Author")</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <!-- Quote 3 -->
+                        <div class="item">
+                            <blockquote>
+                                <div class="row box-white">
+                                   
+                                    <div class="col-sm-9">
+                                        
+                                       <i class="fas fa-quote-left fa-4x"></i> <p>@Umbraco.Field("quote3")</p>
+                                        <small class="author">@Umbraco.Field("quote3Author")</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Buttons Next/Prev -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @{ Html.RenderPartial("Content/_ContactBanner");}

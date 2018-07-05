@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "60c4e92f585228f2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9b2190e9d4acca1a")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -959,6 +959,60 @@ namespace Umbraco.Web.PublishedContentModels
 		public string PersTitle
 		{
 			get { return this.GetPropertyValue<string>("persTitle"); }
+		}
+
+		///<summary>
+		/// Quote1
+		///</summary>
+		[ImplementPropertyType("quote")]
+		public IHtmlString Quote
+		{
+			get { return this.GetPropertyValue<IHtmlString>("quote"); }
+		}
+
+		///<summary>
+		/// quote2
+		///</summary>
+		[ImplementPropertyType("quote2")]
+		public IHtmlString Quote2
+		{
+			get { return this.GetPropertyValue<IHtmlString>("quote2"); }
+		}
+
+		///<summary>
+		/// quote2 Author
+		///</summary>
+		[ImplementPropertyType("quote2Author")]
+		public string Quote2Author
+		{
+			get { return this.GetPropertyValue<string>("quote2Author"); }
+		}
+
+		///<summary>
+		/// quote 3
+		///</summary>
+		[ImplementPropertyType("quote3")]
+		public IHtmlString Quote3
+		{
+			get { return this.GetPropertyValue<IHtmlString>("quote3"); }
+		}
+
+		///<summary>
+		/// quote3 Author
+		///</summary>
+		[ImplementPropertyType("quote3Author")]
+		public string Quote3Author
+		{
+			get { return this.GetPropertyValue<string>("quote3Author"); }
+		}
+
+		///<summary>
+		/// quote Author1
+		///</summary>
+		[ImplementPropertyType("quoteAuthor")]
+		public string QuoteAuthor
+		{
+			get { return this.GetPropertyValue<string>("quoteAuthor"); }
 		}
 
 		///<summary>
