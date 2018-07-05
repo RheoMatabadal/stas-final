@@ -33,6 +33,14 @@ body {
     font-weight: bold;
 }
 
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+     margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+
 .panel-stas {
     border: 2px solid white;
     text-decoration: none;
@@ -174,7 +182,7 @@ h1 {
 }
 
 #contact-home {
-    min-height:500px;
+    min-height:300px;
     padding-top: 50px width:100%;
     /*color: #fff;*/
 }
