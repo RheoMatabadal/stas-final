@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9b2190e9d4acca1a")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b3853f18d9c966")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -1819,12 +1819,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// embed URL
+		/// videoUrl: De embed URL van vimeo kopieren en hier plakken voorbeeld: https://player.vimeo.com/video/216523549
 		///</summary>
-		[ImplementPropertyType("embedURL")]
-		public Newtonsoft.Json.Linq.JToken EmbedUrl
+		[ImplementPropertyType("videoUrl")]
+		public string VideoUrl
 		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("embedURL"); }
+			get { return this.GetPropertyValue<string>("videoUrl"); }
 		}
 	}
 
