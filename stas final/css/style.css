@@ -826,7 +826,8 @@ blockquote {
 .about-hov-text {
     padding-left: 20px;
     color: white;
-    font-weight: lighter;
+
+    font-weight: bolder !important;
 }
 
 .socials {

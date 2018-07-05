@@ -1,12 +1,12 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.AboutUs>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-                /**/
+    /**/
 
-                Layout = "Master.cshtml";
-                string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
-                string CTAImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
-                IEnumerable<IPublishedContent> abtUnderBannerImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("underBannerImages");
+    Layout = "Master.cshtml";
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    string CTAImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
+    IEnumerable<IPublishedContent> abtUnderBannerImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("underBannerImages");
 }
 
 <section id="about_banner" style=" background-image: url('@bannerImageUrl?width=1348&height=463&mode=crop');
@@ -43,17 +43,17 @@
     <div class="container-fluid-no-pad">
         <div class="row no-pad">
             @if (abtUnderBannerImages != null && abtUnderBannerImages.Count() > 0)
-    {
+            {
         <div class="col-md-3">
             <img src="@(abtUnderBannerImages.First().Url)?width=337&height=288&mode=crop" class="img-responsive gallery hvr-grow">
         </div>
-foreach (IPublishedContent image in abtUnderBannerImages.Skip(1))
-{
+                foreach (IPublishedContent image in abtUnderBannerImages.Skip(1))
+                {
         <div class="col-md-3">
             <img src="@(image.Url)?width=337&height=288&mode=crop" class="img-responsive gallery hvr-grow">
         </div>
-}
-}
+                }
+            }
 
         </div>
     </div>
@@ -89,60 +89,47 @@ foreach (IPublishedContent image in abtUnderBannerImages.Skip(1))
 <section id="about-foto-section">
     <div class="container-fluid-no-pad">
         <div class="row no-pad">
+
+@{
+	var selection = Model.Content.Site().FirstChild("aboutUs").Children("aboutItem")
+						.Where(x => x.IsVisible());
+	var personeel = Model.Content.Children();
+}
+
+    @foreach(var p in personeel){
+        if(p.HasValue("memberPicture")){
+            UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext);
+            IPublishedContent mediaItem = umbracoHelper.TypedMedia(p.GetPropertyValue("memberPicture").ToString());
             <div class="col-md-4 image">
-                <img src="~/img/karinGroot.jpg" class="img-responsive gallery">
-                <div class="overlay">
-                    <h1 class="about-hov-title">Karin Revos </h1>
-                    <h5 class="about-hov-functie">CEO </h5>
-                    <p class="about-hov-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quisquam in pariatur, voluptas. Impedit fugit laboriosam quasi autem qui fugiat illum, debitis, quia rerum quo aspernatur consequatur veritatis commodi libero.</p>
+            <img src="@mediaItem.GetCropUrl("personeelsFoto").ToString()" class="img-responsive gallery" alt="@p.Name" />
+        
+        
+         <div class="overlay">
+                    <h1 class="about-hov-title">@p.GetPropertyValue("memberName")</h1>
+                    <h5 class="about-hov-functie">@p.GetPropertyValue("memberFunctie") </h5>
+                    <p class="about-hov-text"> @p.GetPropertyValue("memberBio")</p>
                     <br>
                     <br>
                     <div class="socials">
-                        <i class="fab fa-facebook-square fa-2x"></i>
-                        <i class="fab fa-twitter-square fa-2x"></i>
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-google-plus-square fa-2x"></i>
-                    </div>
+                        <a href="@p.GetPropertyValue("facebook")" target="_blank">  <i class="fab fa-facebook-square fa-2x"></i></a>
+                        <a href="@p.GetPropertyValue("twitter")"  target="_blank"> <i class="fab fa-twitter-square fa-2x"></i></a>
+                        <a href="@p.GetPropertyValue("linkedIn")" target="_blank" > <i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="@p.GetPropertyValue("google")"  target="_blank"><i class="fab fa-google-plus-square fa-2x"></i></a>
 
-                </div>
-            </div>
-            <div class="col-md-4 image">
-                <img src="/img/kenzoGroot.jpg" class="img-responsive gallery">
-                <div class="overlay">
-                    <h1 class="about-hov-title">Kenzo Soemodihardjo </h1>
-                    <h5 class="about-hov-functie">Creative Director </h5>
-                    <p class="about-hov-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quisquam in pariatur, voluptas. Impedit fugit laboriosam quasi autem qui fugiat illum, debitis, quia rerum quo aspernatur consequatur veritatis commodi libero.</p>
-                    <br>
-                    <br>
-                    <div class="socials">
-                        <i class="fab fa-facebook-square fa-2x"></i>
-                        <i class="fab fa-twitter-square fa-2x"></i>
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-google-plus-square fa-2x"></i>
-                    </div>
+        
+    </div>
+        </div>
+        </div>	
+    }
+    }
 
-                </div>
-            </div>
-            <div class="col-md-4 image">
-                <img src="~/img/charleneGroot.jpg" class="img-responsive gallery">
-                <div class="overlay">
-                    <h1 class="about-hov-title">Charlene van Varsseveld </h1>
-                    <h5 class="about-hov-functie">Project Manager </h5>
-                    <p class="about-hov-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quisquam in pariatur, voluptas. Impedit fugit laboriosam quasi autem qui fugiat illum, debitis, quia rerum quo aspernatur consequatur veritatis commodi libero.</p>
-                    <br>
-                    <br>
-                    <div class="socials">
-                        <i class="fab fa-facebook-square fa-2x"></i>
-                        <i class="fab fa-twitter-square fa-2x"></i>
-                        <i class="fab fa-linkedin fa-2x"></i>
-                        <i class="fab fa-google-plus-square fa-2x"></i>
-                    </div>
 
-                </div>
-            </div>
+
+
+
 
         </div>
-    </div>
+        </div>
 </section>
 
 <section id="cta-banner" style="background-image: url('@CTAImageUrl?width=1348&height=463&mode=crop');

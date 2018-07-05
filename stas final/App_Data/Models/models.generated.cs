@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "dc75d8b30d1d3919")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "60c4e92f585228f2")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -1771,6 +1771,104 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken EmbedUrl
 		{
 			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("embedURL"); }
+		}
+	}
+
+	/// <summary>About Item</summary>
+	[PublishedContentModel("aboutItem")]
+	public partial class AboutItem : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "aboutItem";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public AboutItem(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutItem, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Facebook
+		///</summary>
+		[ImplementPropertyType("facebook")]
+		public string Facebook
+		{
+			get { return this.GetPropertyValue<string>("facebook"); }
+		}
+
+		///<summary>
+		/// Google
+		///</summary>
+		[ImplementPropertyType("google")]
+		public string Google
+		{
+			get { return this.GetPropertyValue<string>("google"); }
+		}
+
+		///<summary>
+		/// LinkedIn
+		///</summary>
+		[ImplementPropertyType("linkedIn")]
+		public string LinkedIn
+		{
+			get { return this.GetPropertyValue<string>("linkedIn"); }
+		}
+
+		///<summary>
+		/// Member Bio
+		///</summary>
+		[ImplementPropertyType("memberBio")]
+		public IHtmlString MemberBio
+		{
+			get { return this.GetPropertyValue<IHtmlString>("memberBio"); }
+		}
+
+		///<summary>
+		/// Member Functie
+		///</summary>
+		[ImplementPropertyType("memberFunctie")]
+		public string MemberFunctie
+		{
+			get { return this.GetPropertyValue<string>("memberFunctie"); }
+		}
+
+		///<summary>
+		/// MemberName: naam van de member
+		///</summary>
+		[ImplementPropertyType("memberName")]
+		public string MemberName
+		{
+			get { return this.GetPropertyValue<string>("memberName"); }
+		}
+
+		///<summary>
+		/// Member Picture
+		///</summary>
+		[ImplementPropertyType("memberPicture")]
+		public IPublishedContent MemberPicture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("memberPicture"); }
+		}
+
+		///<summary>
+		/// twitter
+		///</summary>
+		[ImplementPropertyType("twitter")]
+		public string Twitter
+		{
+			get { return this.GetPropertyValue<string>("twitter"); }
 		}
 	}
 
