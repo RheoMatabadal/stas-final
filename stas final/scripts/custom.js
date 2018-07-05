@@ -278,6 +278,11 @@ function closeArt() {
 // 	}
 $(document).ready(function(){
     $('.lb-slides').slick({
-      arrows: false,
+        arrows: false,
+        mobileFirst: true,
+        autoplay: true,
+        autoplaySpeed: 2600
+
+
     });
 });
