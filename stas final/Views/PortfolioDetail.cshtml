@@ -97,7 +97,7 @@
 @{
 	var selection = Model.Content.Site().FirstChild("portfolio").Children("portfolioItem")
 						.Where(x => x.IsVisible())
-						.OrderBy("UpdateDate desc");
+						.OrderBy(i => Guid.NewGuid()).Take(3);
 	var portfolioFotos = Model.Content.Children();
 	foreach(var s in selection){
         if(s.HasValue("displayFoto")){
@@ -110,17 +110,7 @@
         }
     }
 }
-	@foreach(var p in portfolioFotos){
-		if (p.HasValue("displayFoto")){
-		UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext);
-        IPublishedContent mediaItem = umbracoHelper.TypedMedia(p.GetPropertyValue("displayFoto").ToString());
-		
-            <div class="col-md-3">
-        <a href="@p.Url"><img src="@mediaItem.GetCropUrl("displayfoto").ToString()" class="img-responsive gallery hvr-grow"></a>
-     
-      </div>
-		}
-	}
+
     </div>
   </div>
 </section>
