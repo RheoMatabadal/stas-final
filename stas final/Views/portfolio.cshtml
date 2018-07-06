@@ -65,13 +65,13 @@
         {
             UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext);
             IPublishedContent mediaItem = umbracoHelper.TypedMedia(p.GetPropertyValue("displayFoto").ToString());
-            <div class="col-md-6 gallery filter @p.GetPropertyValue("categorie") moreBox imager">
+            <a href="@p.Url"><div class="col-md-6 gallery filter @p.GetPropertyValue("categorie") moreBox imager">
                 <img class="img-fluid" src="@mediaItem.GetCropUrl("portfolioFoto").ToString()" style="width:100%;" />
                 <div class="overlay2">
                     <h1 class="port-title">@p.GetPropertyValue("itemNaam")</h1>
                     <h3 class="port-cat">@p.GetPropertyValue("categorieNaam")</h3>
                 </div>
-            </div>
+            </div></a>
 }
 
 

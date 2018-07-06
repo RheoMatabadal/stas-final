@@ -1,62 +1,7 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.PortfolioDetail>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = null;
+	Layout = "Master.cshtml";
 }
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>PORTFOLIO DETAIL</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" /> 
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-
- <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script> 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
-  <script src="scripts/jquery.bxslider.min.js"></script>
-  <link href="css/jquery.bxslider.css" rel="stylesheet"/>
-     <link href="css/animated-scroll-anchor.css" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-       <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="css/hover-min.css">
-    <link href="css/style.css" rel="stylesheet">
-
-
-</head>
-<body>
- <!-- portfolio detail slider -->
-<div id="myNav" class="overlay-menu">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <p>close</p>
-  <div class="overlay-content">
-    <a href="about.html">about STAS</a>
-    <a href="corporate.html">corporate identity</a>
-    <a href="graphic.html">graphic design</a>
-    <a href="film.html">film/video</a>
-    <a href="events.html">events</a>
-    <a href="contact.html">contact</a>
-    <br>
-    <i class="fas fa-envelope-square fa-2x social-space"></i>
-    <i class="fas fa-phone-square fa-2x social-space"></i>
-    <i class="fab fa-facebook-square fa-2x social-space"></i>
-    <i class="fab fa-vimeo-square fa-2x social-space"></i>
-
-   
-
-  </div>
-</div>
 
 <section id="portfolioHeader">
   <div class="container-fluid-no-pad slider-limit">
@@ -106,13 +51,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="portfolio-title">Afobakka Resort</h1>
+        <h1 class="portfolio-title"></h1>
         <ol class="breadcrumb breadcrumb-port">
-    <li><a href="index.html">HOME</a>
+    <li><a href="/">HOME</a>
     </li>
-    <li><a href="portfolio.html">PORTFOLIO</a>
+    <li><a href="/portfolio">PORTFOLIO</a>
     </li>
-    <li class="active">AFOBAKA RESORT</li>
+    <li class="active">@Umbraco.Field("itemNaam")</li>
 </ol>
         <br>
 
@@ -120,13 +65,12 @@
 <br>
 <div class="row">
 <div class="col-md-8 col-md-offset-1">
-  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat maxime velit voluptatibus doloribus ad accusantium necessitatibus eos explicabo inventore eligendi quam beatae, expedita. Impedit quae, amet autem nihil perspiciatis. Impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim culpa rem cupiditate natus vel odit optio dolorum esse error itaque eaque, rerum harum minima quasi illum, velit cum dolorem commodi.</p>
-  <br>
-  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, voluptas consectetur illo consequuntur expedita nulla ab. Odio mollitia, veniam consequatur perspiciatis, voluptatum recusandae dolor incidunt iure distinctio eos iusto, sed!</p>
+  <p>@Umbraco.Field("itemNaam")</p>
+ 
 </div>
 <div class="col-md-2 col-md-offset-1">
   <p class="bold-small">RELATIE</p>
-  <p>Afobaka resort </p>
+  <p>@Umbraco.Field("relatie") </p>
   <br>
   <p class="bold-small">WERKZAAMHEDEN</p>
   <p>Logo ontwerp</p>
@@ -150,7 +94,7 @@
         
           <h1 class="interessant  hvr-wobble-horizontal"> ook <br> interessant</h1>
           <br>
-          <a href="portfolio.html" class="bekijk-portfolio">BEKIJK PORTFOLIO <img src="img/down-arrow.png" alt="leeronskennen"> </a>
+          <a href="/portfolio" class="bekijk-portfolio">BEKIJK PORTFOLIO <img src="~/img/down-arrow.png" alt="leeronskennen"> </a>
        
       </div>
       <div class="col-md-3">
@@ -194,37 +138,4 @@
 
     </section>
     
-    <section id="footer">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-11 col-sm-8 year col-xs-8 year">
-          
-           <p> <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script>&copy; STAS INTERNATIONAL.<p>
-         
-          </div>
-          <div class="col-md-1 col-sm-4 col-xs-4 year">
-            
-              <i class="fas fa-envelope-square space-social-icons"></i>
-              <i class="fas fa-phone-square space-social-icons"></i>
-              <i class="fab fa-facebook-square space-social-icons"></i>
-              <i class="fab fa-vimeo-square space-social-icons"></i>
-          </div>
-          
-        
-      </div>
-    </div>
-    </section>
     
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/jquery.easing.js'></script>
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/jquery.bxslider.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script src="scripts/animated-scroll-anchor.js"></script>
-<script src="scripts/scrolldown.js"></script>
-<script src="scripts/custom.js"></script>
-  </body>
-
-</html>
