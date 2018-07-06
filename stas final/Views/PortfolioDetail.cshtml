@@ -92,15 +92,35 @@
           <a href="/portfolio" class="bekijk-portfolio">BEKIJK PORTFOLIO <img src="~/img/down-arrow.png" alt="leeronskennen"> </a>
        
       </div>
-      <div class="col-md-3">
-        <img src="img/fatum.jpg" class="img-responsive gallery hvr-grow">
+      
+
+@{
+	var selection = Model.Content.Site().FirstChild("portfolio").Children("portfolioItem")
+						.Where(x => x.IsVisible())
+						.OrderBy("UpdateDate desc");
+	var portfolioFotos = Model.Content.Children();
+	foreach(var s in selection){
+        if(s.HasValue("displayFoto")){
+		    UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext);
+            IPublishedContent mediaItem = umbracoHelper.TypedMedia(s.GetPropertyValue("displayFoto").ToString());
+		
+            <div class="col-md-3">
+                <a href="@s.Url"><img src="@mediaItem.GetCropUrl("displayfoto").ToString()" class="img-responsive gallery hvr-grow"></a>
+            </div>
+        }
+    }
+}
+	@foreach(var p in portfolioFotos){
+		if (p.HasValue("displayFoto")){
+		UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext);
+        IPublishedContent mediaItem = umbracoHelper.TypedMedia(p.GetPropertyValue("displayFoto").ToString());
+		
+            <div class="col-md-3">
+        <a href="@p.Url"><img src="@mediaItem.GetCropUrl("displayfoto").ToString()" class="img-responsive gallery hvr-grow"></a>
+     
       </div>
-      <div class="col-md-3">
-        <img src="img/soela.jpg" class="img-responsive gallery hvr-grow">
-      </div>
-      <div class="col-md-3">
-        <img src="img/belasting.jpg" class="img-responsive gallery hvr-grow">
-      </div>
+		}
+	}
     </div>
   </div>
 </section>

@@ -705,6 +705,7 @@ blockquote {
 .portfolio-title {
     text-align: center;
     font-weight: bolder;
+    margin-top:-25px;
 }
 
 .breadcrumb-port {
