@@ -1,46 +1,45 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    IEnumerable<IPublishedContent> sliderFotos = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderFotos");
 }
 
 <section id="portfolioHeader">
   <div class="container-fluid-no-pad slider-limit">
-    <div class="row">
+    <div class="row-no-pad">
       
       <div class="col-md-2 col-sm-12 col-xs-12">
     
 
-<div class="slider-nav">
-  
-    <img src="img/afobakkaSlider.jpg" alt="image" class="img-responsive" />
+          <div class="slider-nav">
+              @if (sliderFotos != null && sliderFotos.Count() > 0)
+    {
+          <img src="@(sliderFotos.First().Url)?width=170&height=100&mode=crop" alt="image" class="img-responsive" />
+                  foreach (IPublishedContent image in sliderFotos.Skip(1))
+                  {
+          <img src="@(image.Url)?width=170&height=100&mode=crop" alt="image" class="img-responsive" />
+                  }
+              }
 
 
-    <img src="img/afobakkaSlider.jpg" alt="image" class="img-responsive" />
 
-
-    <img src="img/afobakkaSlider.jpg" alt="image" class="img-responsive" />
-
-
-</div>
+          </div>
 </div>
 
 <div class="col-md-10 col-sm-12 col-xs-12">
-<div class="slider-for no-pad">
-  
-    <img src="img/afobakkaSlider.jpg" alt="image"  class="img-responsive" />
+    <div class="slider-for no-pad">
 
-  
-    <img src="img/afobakkaSlider.jpg" alt="image"  class="img-responsive"/>
+        @if (sliderFotos != null && sliderFotos.Count() > 0)
+    {
+        <img src="@(sliderFotos.First().Url)?width=1000&height=594&mode=crop" alt="image" class="img-responsive" />
+    foreach (IPublishedContent image in sliderFotos.Skip(1))
+    {
+        <img src="@(image.Url)?width=1090&height=594&mode=crop" alt="image" class="img-responsive" />
+}
+}
 
-  
 
-  
-    <img src="img/afobakkaSlider.jpg" alt="image" class="img-responsive" />
-
-  
-  
-
-</div>
+    </div>
 </div>
   </div>
   </div>
@@ -51,7 +50,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="portfolio-title"></h1>
+        <h1 class="portfolio-title">@Umbraco.Field("itemNaam")</h1>
         <ol class="breadcrumb breadcrumb-port">
     <li><a href="/">HOME</a>
     </li>
@@ -65,7 +64,7 @@
 <br>
 <div class="row">
 <div class="col-md-8 col-md-offset-1">
-  <p>@Umbraco.Field("itemNaam")</p>
+  <p>@Umbraco.Field("omschrijving")</p>
  
 </div>
 <div class="col-md-2 col-md-offset-1">
@@ -73,11 +72,7 @@
   <p>@Umbraco.Field("relatie") </p>
   <br>
   <p class="bold-small">WERKZAAMHEDEN</p>
-  <p>Logo ontwerp</p>
-  <p>Corporate identity</p>
-  <p>Grafisch ontwerp</p>
-  <p>Webdesign</p>
-  <p>DTP</p>
+  <p>@Umbraco.Field("werkzaamheden") </p>
 </div>
     </div>
 

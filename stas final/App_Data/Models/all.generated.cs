@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "69949d6ddeb5278")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "24e37bbc3085ce92")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -2034,9 +2034,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// werkzaamheden
 		///</summary>
 		[ImplementPropertyType("werkzaamheden")]
-		public IEnumerable<string> Werkzaamheden
+		public IHtmlString Werkzaamheden
 		{
-			get { return this.GetPropertyValue<IEnumerable<string>>("werkzaamheden"); }
+			get { return this.GetPropertyValue<IHtmlString>("werkzaamheden"); }
 		}
 	}
 
