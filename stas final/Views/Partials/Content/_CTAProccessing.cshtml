@@ -9,42 +9,48 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
-                    <form>
+                
+                    <form id="myForm" form role="form" data-toggle="validator" method="post">
                         <div class="form-group">
 
-                            <input type="text" class="form-control half" id="Name" placeholder="Name(required)" required="required">
+                            <input type="text" class="form-control" id="Name" placeholder="Name(required)">
                         </div>
                         <br>
                         <div class="form-group">
 
-                            <input type="email" class="form-control half" id="Email" placeholder="E-mail Adress(required)" required="required">
+                            <input type="email" class="form-control" id="Email" placeholder="E-mail Adress(required)" required>
+                        </div>
+                        <br>
+                        <div class="form-group" >
+
+                            <input type="text" class="form-control required" id="Subject" placeholder="Subject">
                         </div>
                         <br>
                         <div class="form-group">
 
-                            <input type="text" class="form-control half" id="Subject" placeholder="Subject">
-                        </div>
-                        <br>
-                        <div class="form-group">
-
-                            <textarea class="form-control half" id="MessageField" rows="3" placeholder="Message(required)" required="required"></textarea>
+                            <textarea class="form-control " id="MessageField" rows="3" placeholder="Message(required)"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control hidden" id="ToEmail" value="@Umbraco.Field("contactEmail", recursive: true)"/>
                         </div>
+                        
+                       
                     </form>
+                     <button id="send-form" type="submit" class="btn btn-dark pull-left hvr-pulse-grow" href="#" ><i class="fab fa-telegram-plane"></i>Send message</button>  
             </div>
             <div class="modal-footer">
          
-                <a id="send-form" class="btn btn-dark pull-left hvr-pulse-grow" href="#"><i class="fab fa-telegram-plane"></i>Send message</a>
+               
             </div>
         </div>
     </div>
 </div>
 <script>
     $(document).ready(function () {
+      
+      
         $("#send-form").on("click", function () {
+            
             
 
             var toEmail = $("#ToEmail").val();
@@ -53,22 +59,53 @@
             var subject = $("#Subject").val();
             var message = $("#MessageField").val();
             var website = "STAS";
+            
+            var error = 0;
+            
+            if(fromName == ""){
+                error++;
+                error = error +1;
+            }
+            if(fromEmail == ""){
+               error = error +1;
+            }
+            if(subject == ""){
+                error = error +1;
+            }
+            if(message == ""){
+                error = error +1;
+            }
+            
+            
+            if(error == 0){
+                var data = { "to": toEmail, "fromEmail": fromEmail, "fromName": fromName, "subject": subject, "message": message, "website":website };
 
-            var data = { "to": toEmail, "fromEmail": fromEmail, "fromName": fromName, "subject": subject, "message": message, "website":website };
+                $.ajax({
+                    type: "POST",
+                    url: "http://api.adept.sr/umbraco/api/mail/postMail",
+                    // The key needs to match your method's input parameter (case-sensitive).
+                    data: JSON.stringify(data),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () { swal("Message Sent");window.location.reload() },
+                    failure: function () {
+                        swal("Something went Wrong!", "Please try again", "error");
+                    }
+                    
+                    
+                });
+                console.log("versturen " + error)
+                //alert("versturen");
+            }else{
+                console.log("niet versturen " + error)
+          swal("WARNING!", "fill in all the fields", "error");
+            } 
+            
+           
+            
+            
+           
 
-            $.ajax({
-                type: "POST",
-                url: "http://api.adept.sr/umbraco/api/mail/postMail",
-                // The key needs to match your method's input parameter (case-sensitive).
-                data: JSON.stringify(data),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (data) { alert(data); },
-                failure: function (errMsg) {
-                    alert(errMsg);
-                }
-            });
-            $('#exampleModalCenter').modal('hide');
             
 
         });
