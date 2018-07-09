@@ -1,7 +1,23 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
+
+@{
+
+
+    IPublishedContent root = Umbraco.TypedContentAtRoot().FirstOrDefault();
+    dynamic artistSlider = root.GetPropertyValue("ArtistSlider");
+    
+    foreach(var a in artistSlider){
+        <p>@a.Name</p>
+    }
+    
+    <p>@root.GetPropertyValue("ArtistImage")</p>
+    
+    
+}
+
 <div class="vl" id="vl" onclick="openArt()">
-    <p>FEATURED ARTIST: @Umbraco.Field("artistName", casing: RenderFieldCaseType.Upper)</p>
+    <p>FEATURED ARTIST: @Umbraco.Field("artistName", recursive: true, casing: RenderFieldCaseType.Upper)</p>
 </div>
 <section id="artist">
     <div id="mySidenav" class="sidenav">
@@ -48,14 +64,18 @@
 
 
                 <div class="col-md-2 col-sm-12 col-xs-12 artist">
-                    <img src="@Umbraco.Field("artistImageUrl")" class="img-fluid hvr-grow" alt="artist">
-
+                     @if(Model.Content.HasValue("artistImage", true)){
+            UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext);
+            IPublishedContent mediaItem = umbracoHelper.TypedMedia(Model.Content.GetPropertyValue("artistImage", true).ToString());
+		
+                    <img src="@mediaItem.GetCropUrl("artistImage").ToString()" class="img-fluid hvr-grow" alt="artist">
+}
                     <p class="about-artist">ABOUT THE ARTIST</p>
 
                     <p>
-                        @Umbraco.Field("aboutArtist")
-                        <br>Visit @Umbraco.Field("artistName", insertAfter:"'s") website to see  more of her work
-                        <a class="left-align" href="http://www.kathleenhogenboom.com" target="_blank">kathleenhogenboom.com</a>
+                        @Umbraco.Field("artistBio", recursive: true) </p>
+                        <br>Visit @Umbraco.Field("artistName", recursive: true, insertAfter:"'s") website <br> to see  more of her work
+                        <a class="left-align" href="@Umbraco.Field("artistWebsite", recursive: true)" target="_blank">@Umbraco.Field("artistName", insertAfter:".com", recursive: true)</a>
                 </div>
                 <a href="javascript:void(0)" class="closebtn" onclick="closeArt()">&times;</a>
             </div>

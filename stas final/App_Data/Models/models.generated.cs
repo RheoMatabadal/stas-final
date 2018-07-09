@@ -19,14 +19,14 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "24e37bbc3085ce92")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1f9218be9ec51256")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IHideControls, ISocialMediaLinks
+	public partial class Home : PublishedContentModel, IArtist, IHideControls, ISocialMediaLinks
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -122,6 +122,60 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Artist Bio
+		///</summary>
+		[ImplementPropertyType("artistBio")]
+		public IHtmlString ArtistBio
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
+		}
+
+		///<summary>
+		/// Artist Image
+		///</summary>
+		[ImplementPropertyType("artistImage")]
+		public IPublishedContent ArtistImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Artist Name
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
+		}
+
+		///<summary>
+		/// Artist Slider
+		///</summary>
+		[ImplementPropertyType("artistSlider")]
+		public IEnumerable<IPublishedContent> ArtistSlider
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistSlider(this); }
+		}
+
+		///<summary>
+		/// artist Website
+		///</summary>
+		[ImplementPropertyType("artistWebsite")]
+		public string ArtistWebsite
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistWebsite(this); }
+		}
+
+		///<summary>
+		/// portfolio Images
+		///</summary>
+		[ImplementPropertyType("portfolioImages")]
+		public IEnumerable<IPublishedContent> PortfolioImages
+		{
+			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
+		}
+
+		///<summary>
 		/// Umbraco Navi Hide: pagina onzichtbaar maken
 		///</summary>
 		[ImplementPropertyType("umbracoNaviHide")]
@@ -169,7 +223,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>About Us</summary>
 	[PublishedContentModel("aboutUs")]
-	public partial class AboutUs : PublishedContentModel, IArtist, IBanner, ICTA, IHideControls, ITextSection
+	public partial class AboutUs : PublishedContentModel, IBanner, ICTA, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aboutUs";
@@ -226,42 +280,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public IEnumerable<IPublishedContent> UnderBannerImages
 		{
 			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("underBannerImages"); }
-		}
-
-		///<summary>
-		/// Artist Bio
-		///</summary>
-		[ImplementPropertyType("artistBio")]
-		public IHtmlString ArtistBio
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
-		}
-
-		///<summary>
-		/// Artist Image
-		///</summary>
-		[ImplementPropertyType("artistImage")]
-		public IPublishedContent ArtistImage
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
-		}
-
-		///<summary>
-		/// Artist Name
-		///</summary>
-		[ImplementPropertyType("artistName")]
-		public string ArtistName
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
-		}
-
-		///<summary>
-		/// portfolio Images
-		///</summary>
-		[ImplementPropertyType("portfolioImages")]
-		public IEnumerable<IPublishedContent> PortfolioImages
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
 		}
 
 		///<summary>
@@ -339,7 +357,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Corporate Identities</summary>
 	[PublishedContentModel("corporateIdentities")]
-	public partial class CorporateIdentities : PublishedContentModel, IArtist, IBanner, IHideControls, ITextSection
+	public partial class CorporateIdentities : PublishedContentModel, IBanner, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "corporateIdentities";
@@ -498,42 +516,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Artist Bio
-		///</summary>
-		[ImplementPropertyType("artistBio")]
-		public IHtmlString ArtistBio
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
-		}
-
-		///<summary>
-		/// Artist Image
-		///</summary>
-		[ImplementPropertyType("artistImage")]
-		public IPublishedContent ArtistImage
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
-		}
-
-		///<summary>
-		/// Artist Name
-		///</summary>
-		[ImplementPropertyType("artistName")]
-		public string ArtistName
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
-		}
-
-		///<summary>
-		/// portfolio Images
-		///</summary>
-		[ImplementPropertyType("portfolioImages")]
-		public IEnumerable<IPublishedContent> PortfolioImages
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
-		}
-
-		///<summary>
 		/// Banner Author
 		///</summary>
 		[ImplementPropertyType("bannerAuthor")]
@@ -590,7 +572,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Graphic Design</summary>
 	[PublishedContentModel("graphicDesign")]
-	public partial class GraphicDesign : PublishedContentModel, IArtist, IBanner, ICTA, IHideControls, ITextSection
+	public partial class GraphicDesign : PublishedContentModel, IBanner, ICTA, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "graphicDesign";
@@ -713,42 +695,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Artist Bio
-		///</summary>
-		[ImplementPropertyType("artistBio")]
-		public IHtmlString ArtistBio
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
-		}
-
-		///<summary>
-		/// Artist Image
-		///</summary>
-		[ImplementPropertyType("artistImage")]
-		public IPublishedContent ArtistImage
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
-		}
-
-		///<summary>
-		/// Artist Name
-		///</summary>
-		[ImplementPropertyType("artistName")]
-		public string ArtistName
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
-		}
-
-		///<summary>
-		/// portfolio Images
-		///</summary>
-		[ImplementPropertyType("portfolioImages")]
-		public IEnumerable<IPublishedContent> PortfolioImages
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
-		}
-
-		///<summary>
 		/// Banner Author
 		///</summary>
 		[ImplementPropertyType("bannerAuthor")]
@@ -823,7 +769,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>events</summary>
 	[PublishedContentModel("events")]
-	public partial class Events : PublishedContentModel, IArtist, IBanner, IHideControls, ITextSection
+	public partial class Events : PublishedContentModel, IBanner, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "events";
@@ -1009,42 +955,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Artist Bio
-		///</summary>
-		[ImplementPropertyType("artistBio")]
-		public IHtmlString ArtistBio
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
-		}
-
-		///<summary>
-		/// Artist Image
-		///</summary>
-		[ImplementPropertyType("artistImage")]
-		public IPublishedContent ArtistImage
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
-		}
-
-		///<summary>
-		/// Artist Name
-		///</summary>
-		[ImplementPropertyType("artistName")]
-		public string ArtistName
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
-		}
-
-		///<summary>
-		/// portfolio Images
-		///</summary>
-		[ImplementPropertyType("portfolioImages")]
-		public IEnumerable<IPublishedContent> PortfolioImages
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
-		}
-
-		///<summary>
 		/// Banner Author
 		///</summary>
 		[ImplementPropertyType("bannerAuthor")]
@@ -1101,7 +1011,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>portfolio</summary>
 	[PublishedContentModel("portfolio")]
-	public partial class Portfolio : PublishedContentModel, IArtist, IBanner, IHideControls
+	public partial class Portfolio : PublishedContentModel, IBanner, IHideControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "portfolio";
@@ -1122,42 +1032,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Portfolio, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Artist Bio
-		///</summary>
-		[ImplementPropertyType("artistBio")]
-		public IHtmlString ArtistBio
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
-		}
-
-		///<summary>
-		/// Artist Image
-		///</summary>
-		[ImplementPropertyType("artistImage")]
-		public IPublishedContent ArtistImage
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
-		}
-
-		///<summary>
-		/// Artist Name
-		///</summary>
-		[ImplementPropertyType("artistName")]
-		public string ArtistName
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
-		}
-
-		///<summary>
-		/// portfolio Images
-		///</summary>
-		[ImplementPropertyType("portfolioImages")]
-		public IEnumerable<IPublishedContent> PortfolioImages
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
 		}
 
 		///<summary>
@@ -1310,6 +1184,12 @@ namespace Umbraco.Web.PublishedContentModels
 		/// <summary>Artist Name</summary>
 		string ArtistName { get; }
 
+		/// <summary>Artist Slider</summary>
+		IEnumerable<IPublishedContent> ArtistSlider { get; }
+
+		/// <summary>artist Website</summary>
+		string ArtistWebsite { get; }
+
 		/// <summary>portfolio Images</summary>
 		IEnumerable<IPublishedContent> PortfolioImages { get; }
 	}
@@ -1374,6 +1254,30 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Artist Name</summary>
 		public static string GetArtistName(IArtist that) { return that.GetPropertyValue<string>("artistName"); }
+
+		///<summary>
+		/// Artist Slider
+		///</summary>
+		[ImplementPropertyType("artistSlider")]
+		public IEnumerable<IPublishedContent> ArtistSlider
+		{
+			get { return GetArtistSlider(this); }
+		}
+
+		/// <summary>Static getter for Artist Slider</summary>
+		public static IEnumerable<IPublishedContent> GetArtistSlider(IArtist that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("artistSlider"); }
+
+		///<summary>
+		/// artist Website
+		///</summary>
+		[ImplementPropertyType("artistWebsite")]
+		public string ArtistWebsite
+		{
+			get { return GetArtistWebsite(this); }
+		}
+
+		/// <summary>Static getter for artist Website</summary>
+		public static string GetArtistWebsite(IArtist that) { return that.GetPropertyValue<string>("artistWebsite"); }
 
 		///<summary>
 		/// portfolio Images
@@ -1497,7 +1401,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Film Video</summary>
 	[PublishedContentModel("filmVideo")]
-	public partial class FilmVideo : PublishedContentModel, IArtist, IBanner, ICTA, IHideControls, ITextSection
+	public partial class FilmVideo : PublishedContentModel, IBanner, ICTA, IHideControls, ITextSection
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "filmVideo";
@@ -1545,42 +1449,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Subtitle
 		{
 			get { return this.GetPropertyValue<string>("subtitle"); }
-		}
-
-		///<summary>
-		/// Artist Bio
-		///</summary>
-		[ImplementPropertyType("artistBio")]
-		public IHtmlString ArtistBio
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistBio(this); }
-		}
-
-		///<summary>
-		/// Artist Image
-		///</summary>
-		[ImplementPropertyType("artistImage")]
-		public IPublishedContent ArtistImage
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistImage(this); }
-		}
-
-		///<summary>
-		/// Artist Name
-		///</summary>
-		[ImplementPropertyType("artistName")]
-		public string ArtistName
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetArtistName(this); }
-		}
-
-		///<summary>
-		/// portfolio Images
-		///</summary>
-		[ImplementPropertyType("portfolioImages")]
-		public IEnumerable<IPublishedContent> PortfolioImages
-		{
-			get { return Umbraco.Web.PublishedContentModels.Artist.GetPortfolioImages(this); }
 		}
 
 		///<summary>
